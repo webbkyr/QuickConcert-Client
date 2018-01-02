@@ -15,10 +15,10 @@ export class ConcertList extends React.Component{
           if (this.props.error) {
             return <p>{this.props.error}</p>
           }
-      
           const list = this.props.concerts.map((concert, index) => {
+            console.log(concert);
             return (
-              <li key={index}>{concert}</li>
+              <li key={index}>{concert.title}</li>
             )
       
           });  
