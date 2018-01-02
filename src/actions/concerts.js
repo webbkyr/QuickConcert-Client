@@ -30,7 +30,8 @@ export const fetchConcertError = function(err){
 export const fetchConcerts = function(){
     return function(dispatch){
         dispatch(fetchConcertRequest());
-        fetch(`${API_BASE_URL}/api/concerts`).then(res => {
+        console.log(API_BASE_URL);
+        return fetch(`${API_BASE_URL}/api/concerts`).then(res => {
 
             if(!res.ok){
                 return Promise.reject(res.statusText);
