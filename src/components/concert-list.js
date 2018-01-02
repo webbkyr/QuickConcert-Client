@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';
 
 export class ConcertList extends React.Component{
-    componentDidMount(){
-        this.props.dispatch(fetchConcerts());
-    }
+    // componentDidMount(){
+    //     this.props.dispatch(fetchConcerts());
+    // }
 
     renderData(){
         if (this.props.loading) {
@@ -15,10 +15,11 @@ export class ConcertList extends React.Component{
           if (this.props.error) {
             return <p>{this.props.error}</p>
           }
+          console.log('testing',this.props.concerts);
           const list = this.props.concerts.map((concert, index) => {
             console.log(concert);
             return (
-              <li key={index}>{concert.title}</li>
+              <li key={index}>{concert.name}</li>
             )
       
           });  
@@ -26,12 +27,16 @@ export class ConcertList extends React.Component{
         
         }
       
-      
         render() {
           return (
             <div>
               {this.renderData()}
-              <button> Click Me!</button>
+                <form onSubmit={() => this.props.dispatch(fetchConcerts())}>
+                    <a href="#" data-toggle="dropdown">List of Cities</a>
+                    <div>
+                        <button>Search</button>
+                    </div>
+                </form>            
             </div>
           )
         }       
