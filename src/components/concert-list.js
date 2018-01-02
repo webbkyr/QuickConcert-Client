@@ -5,7 +5,7 @@ import Spinner from 'react-spinkit';
 
 export class ConcertList extends React.Component{
     componentDidMount(){
-        this.props.dispatch(fetchCheeses());
+        this.props.dispatch(fetchConcerts());
     }
 
     renderData(){

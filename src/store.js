@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { reducer } from './reducers'
+import { reducer } from './reducers/concerts'
 
 export default createStore(reducer, applyMiddleware(thunk));
