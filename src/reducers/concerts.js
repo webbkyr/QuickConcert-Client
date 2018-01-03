@@ -1,6 +1,7 @@
-import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR } from '../actions/concerts';
+import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, SHOW_LANDING } from '../actions/concerts';
 
 const initialState = {
+    landing: null,
     concerts: [],
     loading: false,
     error: null
@@ -8,6 +9,10 @@ const initialState = {
 
 export const reducer = (state=initialState, action) => {
   switch(action.type) {
+
+    case SHOW_LANDING:
+    return Object.assign({}, state, {landing: true})
+    
     case FETCH_CONCERT_REQUEST:
     return Object.assign({}, state, {loading: true})
 

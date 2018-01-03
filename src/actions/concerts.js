@@ -2,6 +2,7 @@ import { API_BASE_URL } from '../config';
 export const FETCH_CONCERT_REQUEST = 'FETCH CONCERT REQUEST';
 export const FETCH_CONCERT_SUCCESS = 'FETCH CONCERT SUCCESS';
 export const FETCH_CONCERT_ERROR = 'FETCH CONCERT ERROR';
+export const SHOW_LANDING = 'SHOW LANDING';
 
 // async actions 
 
@@ -22,6 +23,12 @@ export const fetchConcertError = function(err){
     return {
         type: FETCH_CONCERT_ERROR,
         err
+    }
+}
+
+export const displayLanding = function() {
+    return {
+        type: SHOW_LANDING
     }
 }
 
