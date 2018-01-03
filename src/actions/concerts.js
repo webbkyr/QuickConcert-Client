@@ -27,17 +27,11 @@ export const fetchConcertError = function(err){
 
 //async action: there can be more than one
 //pass in arg for dates and location
-export const fetchConcerts = function(startDate, endDate, location){
-    let urlParams = ({
-        'startDateTime': startDate, 
-        'endDateTime': endDate,
-        'city': location
-    })
-console.log(urlParams)
+export const fetchConcerts = function(location){
+//use url params to pass data
     return function(dispatch){
         dispatch(fetchConcertRequest());
-        console.log(startDate, endDate);
-        return fetch(`${API_BASE_URL}/api/concerts`, urlParams)
+        return fetch(`${API_BASE_URL}/api/concerts?city=${location}`)
         .then(res => {
 
             if(!res.ok){
