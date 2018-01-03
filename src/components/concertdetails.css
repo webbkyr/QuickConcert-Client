@@ -1,0 +1,8 @@
+.concert-results {
+  color: white;
+}
+
+li {
+  list-style-type: none;
+  padding-top: 10px;
+}

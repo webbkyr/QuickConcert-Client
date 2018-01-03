@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import ShareEvent from './shareevent';
+import './concertdetails.css';
 
 export function ConcertDetails(props) {
   const list = props.concerts.map((concert, index) => {
@@ -10,6 +12,7 @@ export function ConcertDetails(props) {
       <div>{concert.dates.start.localDate}</div>
       <div>{concert.dates.start.localTime}</div>
       <div><a target='_blank' href={concert.url}><button>Buy Tickets</button></a></div>
+      <div><ShareEvent concert={concert} /></div>
       </li>
   )});
   return (

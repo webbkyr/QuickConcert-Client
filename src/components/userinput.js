@@ -8,7 +8,6 @@ export class UserLocation extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const value = this.input.value.toLowerCase();
-    console.log('input value>>>>>', value)
     this.props.dispatch(fetchConcerts(value));
   
   }

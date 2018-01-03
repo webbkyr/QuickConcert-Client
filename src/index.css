@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-image: url('./components/images/nainoa-shizuru-80385.jpg');
-  background-size: full;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 

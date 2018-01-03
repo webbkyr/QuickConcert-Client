@@ -1,4 +1,11 @@
 .button:hover {
-  background-color: #4CAF50; /* Green */
+
+  background-color: rgb(47, 135, 235); /* Green */
   color: white;
+}
+
+.button {
+  transition-duration: 0.4s;
+  width: 50px;
+
 }
