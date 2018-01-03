@@ -10,9 +10,27 @@ export class ConcertList extends React.Component{
 
  ///method to grab the value of the input and update the store
  //sending in userInput to fetchConcerts   
-handleSubmit(e) {
+handleSubmit(e, getConcertDates) {
   e.preventDefault();
-  this.props.dispatch(fetchConcerts());
+  const { startDateTime, endDateTime } = getConcertDates;
+  this.props.dispatch(fetchConcerts(startDateTime, endDateTime));
+  console.log(startDateTime, endDateTime)
+}
+
+getConcertDates() {
+  //get today's date
+  const todaysDate = new Date();
+  //remove extra seconds from the ISO date format
+  const startDateTime = todaysDate.toISOString().slice(0,19)+'Z';
+  //get tomorrow's date in seconds
+  const tomorrowSeconds = todaysDate.setDate(todaysDate.getDate()+1);
+  //convert tomorrow's seconds into a new Date object
+  const tomorrowsDate = new Date(tomorrowSeconds);
+  //convert tomorrow's date to an ISO string with extra seconds removed
+  const endDateTime = tomorrowsDate.toISOString().slice(0,19)+'Z';
+  
+  return {startDateTime, endDateTime};
+
 }
 
     renderData(){
@@ -41,8 +59,8 @@ handleSubmit(e) {
           return (
             <div>
               {this.renderData()}
-                <form onSubmit={(e) => this.handleSubmit(e)}>
-                    <input type='text' placeholder='New York' onChange={e => console.log(e.target.value)}/>
+                <form onSubmit={(e) => this.handleSubmit(e, this.getConcertDates())}>
+                    <input type='text' placeholder='New York'/>
                     <input type='submit' value='Search'/>
                 </form>
                 {/* <button onClick={() => this.props.dispatch(fetchConcerts())}>Click</button>             */}
