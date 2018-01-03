@@ -41,13 +41,11 @@ handleSubmit(e, location) {
         
         }
 
-
-      
         render() {
           return (
             <div>
               {this.renderData()}
-                <form onSubmit={(e) => this.handleSubmit(e, 'atlanta')}>
+                <form onSubmit={(e) => this.handleSubmit(e, 'madison')}>
                     <input type='text' placeholder='New York'/>
                     <input type='submit' value='Search'/>
                 </form>
@@ -59,7 +57,7 @@ handleSubmit(e, location) {
 
 const mapStateToProps = function(state){
     return {
-        concerts: state.concerts,
+        concerts: state.concerts || [],
         loading: state.loading,
         error: state.error
     }
