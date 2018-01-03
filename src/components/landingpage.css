@@ -1,5 +1,7 @@
+
 #landing {
-  background-image: url('./images/nainoa-shizuru-80385.jpg');
-}        
-
-
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  margin-top: 100px;
+}

@@ -46,7 +46,7 @@ export class ConcertList extends React.Component{
 
 const mapStateToProps = function(state){
     return {
-        // landing: state.landing,
+        landing: state.landing,
         concerts: state.concerts || [],
         loading: state.loading,
         error: state.error
