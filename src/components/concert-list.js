@@ -14,7 +14,6 @@ handleSubmit(e, getConcertDates) {
   e.preventDefault();
   const { startDateTime, endDateTime } = getConcertDates;
   this.props.dispatch(fetchConcerts(startDateTime, endDateTime));
-  console.log(startDateTime, endDateTime)
 }
 
 getConcertDates() {
@@ -41,14 +40,20 @@ getConcertDates() {
           if (this.props.error) {
             return <p>{this.props.error}</p>
           }
-          console.log('testing',this.props.concerts);
           const list = this.props.concerts.map((concert, index) => {
             console.log(this.props.concerts);
             return (
-              <li key={index}>{concert.name}</li>
+              <li key={index}>
+              <div>{concert.name}</div>
+              <div>{concert.classifications[0].genre.name}</div>
+              <div>{concert.dates.start.localDate}</div>
+              <div>{concert.dates.start.localTime}</div>
+              <div><a target='_blank' href={concert.url}><button>Buy Tickets</button></a></div>
+              </li>
             )
       
           });  
+          console.log(list);
           return <ul className='concert-results'>{list}</ul>;
         
         }
