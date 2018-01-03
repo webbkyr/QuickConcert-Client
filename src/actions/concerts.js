@@ -26,12 +26,13 @@ export const fetchConcertError = function(err){
 }
 
 //async action: there can be more than one
-
-export const fetchConcerts = function(){
+//pass in arg for dates and location
+export const fetchConcerts = function(location){
+//use url params to pass data
     return function(dispatch){
         dispatch(fetchConcertRequest());
-        console.log(API_BASE_URL);
-        return fetch(`${API_BASE_URL}/api/concerts`).then(res => {
+        return fetch(`${API_BASE_URL}/api/concerts?city=${location}`)
+        .then(res => {
 
             if(!res.ok){
                 return Promise.reject(res.statusText);
