@@ -39,14 +39,12 @@ export class ConcertList extends React.Component {
           } else {
           return (
             <div>
-              <Modal
+              {/* <Modal
                   isOpen={this.props.isModalOpen}
                   contentLabel="Modal">
-                <h1>Share this Event</h1>
                 <ShareEvent />
-
-                {/* <OpenModal/> */}
-              </Modal>
+                <OpenModal/>
+              </Modal> */}
               <UserLocation/>
               <ConcertDetails />
               {this.renderData()}

@@ -1,4 +1,4 @@
-import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, SHOW_LANDING, SHOW_LOCATION } from '../actions/concerts';
+import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, SHOW_LANDING, SHOW_LOCATION, CONCERT_SELECTED } from '../actions/concerts';
 import {FETCH_LINK_REQUEST, FETCH_LINK_SUCCESS, FETCH_LINK_ERROR  } from '../actions/eventlinks'
 import { SHOW_MODAL, HIDE_MODAL } from '../actions/modal';
 
@@ -9,11 +9,15 @@ const initialState = {
     eventLink: [''],
     loading: false,
     error: null,
-    isModalOpen: false
+    isModalOpen: false,
+    selectedConcert: null
    }
 
 export const reducer = (state=initialState, action) => {
   switch(action.type) {
+
+    case CONCERT_SELECTED:
+    return Object.assign({}, state, {selectedConcert: action.payload})
 
     case SHOW_MODAL:
     return Object.assign({}, state, {isModalOpen: true})

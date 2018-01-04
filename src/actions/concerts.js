@@ -4,6 +4,7 @@ export const FETCH_CONCERT_SUCCESS = 'FETCH CONCERT SUCCESS';
 export const FETCH_CONCERT_ERROR = 'FETCH CONCERT ERROR';
 export const SHOW_LANDING = 'SHOW LANDING';
 export const SHOW_LOCATION = 'SHOW LOCATION';
+export const CONCERT_SELECTED = 'CONCERT SELECTED';
 
 
 // async actions 
@@ -40,7 +41,13 @@ export const displayUserLocation = function() {
     }
 }
 
-// export const fetchLinkRequest = function() {
+export const selectConcert = function(concert){
+    console.log('Selected Concert:', concert);
+    return {
+      type: CONCERT_SELECTED,
+      payload: concert
+    }
+  };// export const fetchLinkRequest = function() {
 //     return {
 //         type: FETCH_LINK_REQUEST
 //     }
