@@ -9,9 +9,11 @@ export const fetchLinkRequest = function() {
   }
 }
 
-export const fetchLinkSuccess = function() {
+export const fetchLinkSuccess = function(data) {
   return {
-      type: FETCH_LINK_SUCCESS
+      type: FETCH_LINK_SUCCESS,
+      data
+
   }
 }
 
@@ -36,6 +38,7 @@ export const fetchSharedLink = function(concertInfo) {
           }
           return res.json();
       }).then(event => {
+          console.log(event)
           dispatch(fetchLinkSuccess(event));
       }).catch(err => {
           dispatch(fetchLinkError(err))
