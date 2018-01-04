@@ -35,17 +35,20 @@ handleCreateEvent(e, concert) {
     creator: name,
     attendee: name
   })
-  this.props.dispatch(fetchSharedLink(name, concert));
+
+  console.log(concertInfo);
+  this.props.dispatch(fetchSharedLink(concertInfo));
 }
 
 handleSelectedConcert() {
   if (this.props.selectedConcert === null) {
     return
   } else {
-    return <p>Event Title: {this.props.selectedConcert.name} <br/>
-          Date: {this.props.selectedConcert.dates.localDate} <br/>
-          Time: {this.props.selectedConcert.dates.localTime} <br/>
-          </p>
+    return <div><p>Event Title: {this.props.selectedConcert.name} </p>
+          <p>Date: {this.props.selectedConcert.dates.localDate} </p>
+          <p>Time: {this.props.selectedConcert.dates.localTime} </p>
+          </div>
+
   }
 }
 
@@ -65,7 +68,7 @@ render() {
     <div className='modal-content'>
     <h1>Share this Concert</h1>
     <div>{this.handleSelectedConcert()}</div>
-    <form onSubmit={(e) => this.handleCreateEvent(e, 'test concert 5pm')}>
+    <form onSubmit={(e) => this.handleCreateEvent(e, this.props.selectedConcert.name)}>
       <input 
       type='text'  
       ref={input => this.input = input}

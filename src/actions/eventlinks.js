@@ -22,6 +22,7 @@ export const fetchLinkError = function() {
 }
 
 export const fetchSharedLink = function(concertInfo) {
+    console.log(concertInfo)
   return function(dispatch) {
       dispatch(fetchLinkRequest());
       return fetch(`${API_BASE_URL}/api/concerts`, {
