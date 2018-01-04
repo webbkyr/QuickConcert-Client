@@ -5,7 +5,7 @@ const initialState = {
   modalProps: {}
 }
 
-function modal(state = initialState, action) {
+export const modal = (state = initialState, action) => {
   switch(action.type) {
     case SHOW_MODAL:
     return Object.assign({}, state, {modalType: action.modalType, modalProps: action.modalProps})
