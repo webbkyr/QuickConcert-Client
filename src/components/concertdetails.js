@@ -8,8 +8,11 @@ import { showModal } from '../actions/modal';
 
 export function ConcertDetails(props) {
   const handleActions = (concert) => {
-    props.dispatch(showModal());
+    // props.dispatch(showModal());
     props.dispatch(selectConcert(concert));
+    props.dispatch(showModal());
+    
+    
     
   }
   const list = props.concerts.map((concert, index) => {
@@ -24,7 +27,7 @@ export function ConcertDetails(props) {
       <div><button 
         onClick={() => handleActions(concert)}
       >Share</button></div>
-      <div><ShareEvent concert={concert} /></div>
+      <div><ShareEvent /></div>
       </li>
   )});
   return (

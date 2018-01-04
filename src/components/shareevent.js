@@ -10,7 +10,11 @@ import './modal.css';
 //have user enter their name
 //click 'create event' to fire off the dispatch for FetchLink
 
-export function ShareEvent(props) {
+export class ShareEvent extends React.Component {
+
+  
+  // console.log('ShareEvent Props', props)
+  // console.log(props.selectedConcert)
   // componentWillMount()  {
   //   this.props.dispatch(selectConcert(this.props.concert))
 
@@ -23,24 +27,65 @@ export function ShareEvent(props) {
 //place some opacity on bckg so this will popout more
 // console.log('ShareEvent Props', this.props.concert)
 // console.log(props.selectedConcert.name)
+handleCreateEvent(e, concert) {
+  e.preventDefault();
+  const name = this.input.value;
+  const concertInfo = ({
+    eventName: concert, 
+    creator: name,
+    attendee: name
+  })
+  this.props.dispatch(fetchSharedLink(name, concert));
+}
 
+handleSelectedConcert() {
+  if (this.props.selectedConcert === null) {
+    return
+  } else {
+    return <p>Event Title: {this.props.selectedConcert.name} <br/>
+          Date: {this.props.selectedConcert.dates.localDate} <br/>
+          Time: {this.props.selectedConcert.dates.localTime} <br/>
+          </p>
+  }
+}
+
+// else {
+//   return <p>Name: {props.selectedConcert.name} <br/>
+// ID: {props.selectedConcert.id} <br/>
+// URL: {props.selectedConcert.url}</p>
+// }
+// }
+
+render() {
   return (
     
-    <div className='modal' style={{'display':(props.isModalOpen)?'block':'none'}}>
+    <div className='modal' style={{'display':(this.props.isModalOpen)?'block':'none'}}>
     {/* <OpenModal /> */}
     {/* <button onClick={() => props.dispatch(showModal())}className='button'>Share</button> */}
     <div className='modal-content'>
     <h1>Share this Concert</h1>
-    <p>Event: Some concert</p>
-    <input type='text' placeholder='Your Name'/>
+    <div>{this.handleSelectedConcert()}</div>
+    <form onSubmit={(e) => this.handleCreateEvent(e, 'test concert 5pm')}>
+      <input 
+      type='text'  
+      ref={input => this.input = input}
+      required
+      name='name'
+      placeholder='Your Name'/>
     {/* <p>Event: {props.selectedConcert.name}</p> */}
-    {/* <p>Event: {props.selectedConcert ? 'click' :` ${props.selectedConcert.name}`}</p> */}
-    <button className='close'onClick={() => props.dispatch(hideModal())}>Close</button>
-    <button className='close' onClick={() => props.dispatch(fetchSharedLink())}>Create Event</button>
-    
+    {/* <p>Event: {props.selectedConcert === null? '' :` ${props.selectedConcert.name}`}</p> */}
+      <button className='close' onClick={() => this.props.dispatch(hideModal())}>Close</button>
+      <button 
+      type='submit'
+      name='usersname'
+      className='close' 
+      >
+      Create Event</button>
+    </form>
     </div>
     </div>
   )
+}
 
 }
 

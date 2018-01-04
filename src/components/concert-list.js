@@ -45,6 +45,7 @@ export class ConcertList extends React.Component {
                 <ShareEvent />
                 <OpenModal/>
               </Modal> */}
+              {/* <ShareEvent /> */}
               <UserLocation/>
               <ConcertDetails />
               {this.renderData()}
