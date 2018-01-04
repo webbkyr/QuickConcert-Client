@@ -4,6 +4,7 @@ import { fetchSharedLink } from '../actions/eventlinks'
 import { showModal, hideModal } from '../actions/modal';
 import { OpenModal } from './openmodal';
 import { selectConcert } from '../actions/concerts';
+import './modal.css';
 
 //modal opens
 //have user enter their name
@@ -25,13 +26,19 @@ export function ShareEvent(props) {
 
   return (
     
-    <div style={{'display':(props.isModalOpen)?'block':'none'}}>
-      <OpenModal />
+    <div className='modal' style={{'display':(props.isModalOpen)?'block':'none'}}>
+    {/* <OpenModal /> */}
     {/* <button onClick={() => props.dispatch(showModal())}className='button'>Share</button> */}
+    <div className='modal-content'>
     <h1>Share this Concert</h1>
-    <p>Event: {props.selectedConcert ? 'click' :` ${props.selectedConcert.name}`}</p>
-    <button onClick={() => props.dispatch(fetchSharedLink())}>Create Event</button>
-    <button onClick={() => props.dispatch(hideModal())}>Close</button>
+    <p>Event: Some concert</p>
+    <input type='text' placeholder='Your Name'/>
+    {/* <p>Event: {props.selectedConcert.name}</p> */}
+    {/* <p>Event: {props.selectedConcert ? 'click' :` ${props.selectedConcert.name}`}</p> */}
+    <button className='close'onClick={() => props.dispatch(hideModal())}>Close</button>
+    <button className='close' onClick={() => props.dispatch(fetchSharedLink())}>Create Event</button>
+    
+    </div>
     </div>
   )
 
