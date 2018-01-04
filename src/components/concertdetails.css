@@ -1,8 +1,22 @@
 .concert-results {
   color: white;
+  /* top: 40%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+
+  margin: 250px;  
+  margin-top: 650px;
 }
 
 li {
   list-style-type: none;
   padding-top: 10px;
+  border-radius: 10px;
+  background: rgba(171, 230, 238, 0.5);
+}
+
+.results {
+  display: block;
+  left: 50%;  
+  text-align: center;
 }
