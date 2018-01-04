@@ -5,7 +5,10 @@ import { displayUserLocation } from '../actions/concerts';
 
 export function BeginConcertSearch(props) {
   return (
-    <button onClick={() => props.dispatch(displayUserLocation())}name='Begin' className='button'>Go!</button> 
+    <button 
+    onClick={() => props.dispatch(displayUserLocation())} name='Begin' 
+    className='button'>Go!
+    </button> 
   )
 }
 

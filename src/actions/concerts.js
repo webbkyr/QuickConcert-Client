@@ -4,10 +4,6 @@ export const FETCH_CONCERT_SUCCESS = 'FETCH CONCERT SUCCESS';
 export const FETCH_CONCERT_ERROR = 'FETCH CONCERT ERROR';
 export const SHOW_LANDING = 'SHOW LANDING';
 export const SHOW_LOCATION = 'SHOW LOCATION';
-export const FETCH_LINK_REQUEST = 'FETCH LINK REQUEST';
-export const FETCH_LINK_SUCCESS = 'FETCH LINK SUCCESS';
-export const FETCH_LINK_ERROR = 'FETCH LINK ERROR';
-
 
 
 // async actions 
@@ -44,24 +40,23 @@ export const displayUserLocation = function() {
     }
 }
 
-export const fetchLinkRequest = function() {
-    return {
-        type: FETCH_LINK_REQUEST
-    }
-}
+// export const fetchLinkRequest = function() {
+//     return {
+//         type: FETCH_LINK_REQUEST
+//     }
+// }
 
-export const fetchLinkSuccess = function() {
-    return {
-        type: FETCH_LINK_SUCCESS
-    }
-}
+// export const fetchLinkSuccess = function() {
+//     return {
+//         type: FETCH_LINK_SUCCESS
+//     }
+// }
 
-export const fetchLinkError = function() {
-    return {
-        type: FETCH_LINK_ERROR
-    }
-}
-
+// export const fetchLinkError = function() {
+//     return {
+//         type: FETCH_LINK_ERROR
+//     }
+// }
 
 //need action for user input
 
@@ -86,23 +81,23 @@ export const fetchConcerts = function(location){
     };
 };
 
-export const fetchSharedLink = function(concertInfo) {
-    return function(dispatch) {
-        dispatch(fetchLinkRequest());
-        return fetch(`${API_BASE_URL}/api/concerts`, {
-            method: 'POST',
-            body: JSON.stringify(concertInfo),
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+// export const fetchSharedLink = function(concertInfo) {
+//     return function(dispatch) {
+//         dispatch(fetchLinkRequest());
+//         return fetch(`${API_BASE_URL}/api/concerts`, {
+//             method: 'POST',
+//             body: JSON.stringify(concertInfo),
+//             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
 
-        }).then(res => {
-            if (!res.ok) {
-                return Promise.reject(res.statusText);
-            }
-            return res.json();
-        }).then(event => {
-            dispatch(fetchLinkSuccess(event));
-        }).catch(err => {
-            dispatch(fetchLinkError(err))
-        })
-    }
-}
+//         }).then(res => {
+//             if (!res.ok) {
+//                 return Promise.reject(res.statusText);
+//             }
+//             return res.json();
+//         }).then(event => {
+//             dispatch(fetchLinkSuccess(event));
+//         }).catch(err => {
+//             dispatch(fetchLinkError(err))
+//         })
+//     }
+// }

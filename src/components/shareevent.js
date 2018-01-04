@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchSharedLink } from '../actions/concerts'
+import { fetchSharedLink } from '../actions/eventlinks'
 
 export function ShareEvent(props) {
   let concertInfo = ({

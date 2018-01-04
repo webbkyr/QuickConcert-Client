@@ -1,13 +1,13 @@
 import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, SHOW_LANDING, SHOW_LOCATION } from '../actions/concerts';
+import {FETCH_LINK_REQUEST, FETCH_LINK_SUCCESS, FETCH_LINK_ERROR  } from '../actions/eventlinks'
 
 const initialState = {
     landing: null,
     concerts: [],
+    eventLink: [''],
     loading: false,
     error: null
    }
-
-//add loading prop to fetching links
 
 export const reducer = (state=initialState, action) => {
   switch(action.type) {
@@ -26,6 +26,15 @@ export const reducer = (state=initialState, action) => {
 
     case FETCH_CONCERT_ERROR:
     return Object.assign({}, state, {loading: false, error: action.err})
+
+    case FETCH_LINK_REQUEST:
+    return Object.assign({}, state,{loading: true})
+
+    case FETCH_LINK_SUCCESS:
+    return Object.assign({}, state, {loading: false, eventLinks: action.data, error: null})
+
+    case FETCH_LINK_ERROR:
+    return Object.assign({}, state, {error: action.err})
 
     default:
     break;
