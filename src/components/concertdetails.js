@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import ShareEvent from './shareevent';
+import OpenModal from './openmodal';
 import './concertdetails.css';
 
 export function ConcertDetails(props) {
@@ -12,7 +13,8 @@ export function ConcertDetails(props) {
       <div>{concert.dates.start.localDate}</div>
       <div>{concert.dates.start.localTime}</div>
       <div><a target='_blank' href={concert.url}><button>Buy Tickets</button></a></div>
-      <div><ShareEvent concert={concert} /></div>
+      <div><OpenModal concert={concert}/></div>
+      {/* <div><ShareEvent concert={concert} />Share</div> */}
       </li>
   )});
   return (

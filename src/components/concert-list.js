@@ -1,18 +1,22 @@
 import React from 'react';
+import Modal from 'react-modal';
 import { fetchConcerts, displayLanding } from '../actions/concerts';
 import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';
 import UserLocation from './userinput';
 import ConcertDetails from './concertdetails';
 import LandingPage from './landingpage';
+import ShareEvent from './shareevent'
+import { OpenModal } from './openmodal';
 
-export class ConcertList extends React.Component{
+//use className prop to style the modal
+                  // className={}
+                  // onRequestClose={DispatchesClosemethod}
+
+export class ConcertList extends React.Component {
   componentDidMount() {
     this.props.dispatch(displayLanding())
   }
-
-
- 
 
     renderData(){
 
@@ -35,6 +39,14 @@ export class ConcertList extends React.Component{
           } else {
           return (
             <div>
+              <Modal
+                  isOpen={this.props.isModalOpen}
+                  contentLabel="Modal">
+                <h1>Share this Event</h1>
+                <ShareEvent />
+
+                {/* <OpenModal/> */}
+              </Modal>
               <UserLocation/>
               <ConcertDetails />
               {this.renderData()}
@@ -49,7 +61,8 @@ const mapStateToProps = function(state){
         landing: state.landing,
         concerts: state.concerts || [],
         loading: state.loading,
-        error: state.error
+        error: state.error,
+        isModalOpen: state.isModalOpen
     }
 }
 
