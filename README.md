@@ -1,3 +1,11 @@
+This react app was built with react and redux on the front end and node and express on the backend. 
+
+Purpose: The purpose of this app is to create an event driven platform in which users can search for concerts in a specified area of their choosing and create an event to share with their friends. This event is a sharable link in which invitees can choose whether they will be attending or not. This allows people to organize groups for events very easily, getting rid of the headache involved with trying to organize a big group of people for concerts and/or other events. 
+
+On the backend we are using a RESTful api to retreive the data we need to proxy from a ticketmaster API for the concert info. We are using mongo and mongoose for our database in order to store our concert info, attendees, dates, and other information associated with each event. 
+
+On the frontend we are using react and redux to build out components to load for our UI experience. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
