@@ -2,6 +2,7 @@ import { API_BASE_URL } from '../config';
 export const FETCH_DETAILS_REQUEST = 'FETCH DETAILS REQUEST';
 export const FETCH_DETAILS_SUCCESS = 'FETCH DETAILS SUCCESS';
 export const FETCH_DETAILS_ERROR = 'FETCH DETAILS ERROR';
+export const SHOW_USER_EVENT = 'SHOW USER EVENT';
 
 export const fetchDetailsRequest = function() {
   return {
@@ -22,6 +23,12 @@ export const fetchDetailsError = function(err) {
       type: FETCH_DETAILS_ERROR,
       err
   }
+}
+
+export const displaUserEventDetails = function() {
+    return {
+        type: SHOW_USER_EVENT
+    }
 }
 
 export const fetchEventDetails = function(id) {

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import BeginConcertSearch from './begin';
 import InfoSection from './about-page';
+import { aboutPage } from '../actions/concerts';
 import './landingpage.css';
 
 
@@ -13,9 +14,8 @@ export class LandingPage extends React.Component {
      
   return (
     <section id='landing'>
-      <a className="what" href="./about-page.js">About</a>
+      <a href='#' onClick={() => this.props.dispatch(aboutPage())}>About</a>
       { this.props.about && <InfoSection /> }
-      {/* <InfoSection /> */}
       <div>
         {titleText}
         <BeginConcertSearch />

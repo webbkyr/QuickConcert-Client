@@ -8,6 +8,7 @@ export const SHOW_ABOUT_DESCRIPTION = 'SHOW ABOUT DESCRIPTION';
 export const CONCERT_SELECTED = 'CONCERT SELECTED';
 
 
+
 // sync actions 
 
 export const fetchConcertRequest = function(){
@@ -56,6 +57,8 @@ export const selectConcert = function(concert){
 
 
 
+//async action: there can be more than one
+//pass in arg for dates and location
 export const fetchConcerts = function(location){
 //use url params to pass data
     return function(dispatch){

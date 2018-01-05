@@ -9,6 +9,7 @@ const initialState = {
     concerts: [],
     eventLink: null,
     eventDetails: null,
+    showEventDetailsView: false,
     loading: false,
     error: null,
     isModalOpen: false,
@@ -56,7 +57,7 @@ export const reducer = (state=initialState, action) => {
     return Object.assign({}, state,{loading: true})
 
     case FETCH_DETAILS_SUCCESS:
-    return Object.assign({}, state, {loading: false, eventDetails: action.data, error: null})
+    return Object.assign({}, state, {loading: false, eventDetails: action.data, showEventDetailsView: !state.showEventDetailsView, error: null})
 
     case FETCH_DETAILS_ERROR:
     return Object.assign({}, state, {error: action.err})

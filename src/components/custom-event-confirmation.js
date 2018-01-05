@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {API_BASE_URL} from '../config'
 import { LandingPage } from './landingpage';
 import { fetchEventDetails } from '../actions/event-details';
+import  UserEventDetails  from './usereventdetails';
 
 
 export function EventConfirmation(props) {
@@ -10,19 +11,27 @@ console.log(props.eventDetails)
 //if link clicked then show different view
 
   return (
-    <p>Share this link with your friends to add attendees! <br/>
-    <span onClick={() => props.dispatch(fetchEventDetails(props.eventLink.id))}>{API_BASE_URL}/api/concerts/{props.eventLink.id}</span></p>
+    <div>
+      <p>Share this link with your friends to add attendees! <br/>
+      <span 
+    onClick={() => {
+      props.dispatch(fetchEventDetails(props.eventLink.id))}}>
+      {API_BASE_URL}/api/concerts/{props.eventLink.id}
+      </span>
+      {props.showEventDetailsView ? <UserEventDetails /> : null}
+      </p>
+    </div>
     ) 
   
 }
 
 export const mapStateToProps = state => {
   return {
-    eventDetails: state.eventDetails,
+    showEventDetailsView: state.showEventDetailsView,
     eventLink: state.eventLink
   }
 }
 
-//fixed bug on ShareEvent by importing the default connected component EventConfirmation instead of the named non-connected component { EventConfirmation}
+
 
 export default connect(mapStateToProps)(EventConfirmation)
