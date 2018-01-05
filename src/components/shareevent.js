@@ -1,16 +1,23 @@
 import React from 'react';
+import Spinner from 'react-spinkit'
 import { connect } from 'react-redux';
 import { fetchSharedLink } from '../actions/eventlinks'
 import { hideModal } from '../actions/modal';
-// import { selectConcert } from '../actions/concerts';
 import './modal.css';
+import { EventConfirmation } from './custom-event-confirmation';
 
 
 export class ShareEvent extends React.Component {
 
-//place some opacity on bckg so this will popout more
-// console.log('ShareEvent Props', this.props.concert)
-// console.log(props.selectedConcert.name)
+// handleFetchData() {
+//     if (this.props.loading) {
+//       return <Spinner name="three-bounce" color="olive" fadeIn='none'/>
+//     }
+//     if (this.props.error) {
+//       return <p>{this.props.error}</p>
+//     }        
+//   }
+
 handleCreateEvent(e, concert) {
   e.preventDefault();
   const name = this.input.value;
@@ -35,20 +42,19 @@ handleSelectedConcert() {
           Time: {this.props.selectedConcert.dates.start.localTime} 
           </p>
           </div>
-
   }
 }
 
 
 render() {
-  return (
-    
+  return (    
     <div className='modal' style={{'display':(this.props.isModalOpen)?'block':'none'}}>
 
     <div className='modal-content'>
       <h1>Share this Concert</h1>
       <div>{this.handleSelectedConcert()}
     </div>
+    {/* {this.handleFetchData()}     */}
 
     <form onSubmit={(e) => this.handleCreateEvent(e, this.props.selectedConcert.name)}>
       <input 
@@ -57,6 +63,8 @@ render() {
       required
       name='name'
       placeholder='Your Name'/>
+
+      {this.props.eventLink ? <EventConfirmation /> : null}
 
       <button className='closeModal' onClick={() => this.props.dispatch(hideModal())}>Close</button>
       <button 
@@ -77,7 +85,8 @@ export const mapStateToProps = state => {
   return {
     concerts: state.concerts,
     selectedConcert: state.selectedConcert,
-    isModalOpen: state.isModalOpen
+    isModalOpen: state.isModalOpen,
+    eventLink: state.eventLink
   }
 }
 

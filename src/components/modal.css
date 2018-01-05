@@ -22,7 +22,7 @@
 }
 
 /* The Close Button */
-.close {
+.closeModal, .createEvent {
   color: rgb(79, 81, 104);
   float: right;
   font-size: 28px;

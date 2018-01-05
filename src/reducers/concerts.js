@@ -6,7 +6,7 @@ import { SHOW_MODAL, HIDE_MODAL } from '../actions/modal';
 const initialState = {
     landing: null,
     concerts: [],
-    eventLink: [''],
+    eventLink: null,
     loading: false,
     error: null,
     isModalOpen: false,
@@ -45,7 +45,7 @@ export const reducer = (state=initialState, action) => {
     return Object.assign({}, state,{loading: true})
 
     case FETCH_LINK_SUCCESS:
-    return Object.assign({}, state, {loading: false, eventLinks: action.data, error: null})
+    return Object.assign({}, state, {loading: false, eventLink: action.data, error: null})
 
     case FETCH_LINK_ERROR:
     return Object.assign({}, state, {error: action.err})
