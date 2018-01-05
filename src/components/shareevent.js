@@ -58,11 +58,11 @@ render() {
       name='name'
       placeholder='Your Name'/>
 
-      <button className='close' onClick={() => this.props.dispatch(hideModal())}>Close</button>
+      <button className='closeModal' onClick={() => this.props.dispatch(hideModal())}>Close</button>
       <button 
       type='submit'
       name='createEvent'
-      className='close' 
+      className='createEvent' 
       >
       Create Event</button>
     </form>

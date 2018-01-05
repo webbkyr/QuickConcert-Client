@@ -15,8 +15,9 @@ export class UserLocation extends React.Component {
   
   render() {
     return (
-      <form onSubmit={(e) => {
-        id='search-form'
+      <form 
+      id='search-form'
+      onSubmit={(e) => {
         this.handleSubmit(e)}}>
       <input 
         id="search-input"
