@@ -17,9 +17,10 @@ export const fetchLinkSuccess = function(data) {
   }
 }
 
-export const fetchLinkError = function() {
+export const fetchLinkError = function(err) {
   return {
-      type: FETCH_LINK_ERROR
+      type: FETCH_LINK_ERROR,
+      err
   }
 }
 

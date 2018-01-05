@@ -30,7 +30,7 @@ export class UserLocation extends React.Component {
         type='submit' 
         name='Search' 
         id='searchButton' 
-        className='button'>
+        className='searchButton'>
         Search</button>
     </form>
     )

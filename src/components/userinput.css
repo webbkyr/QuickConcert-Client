@@ -11,7 +11,7 @@
     background: rgba(171, 230, 238, 0.5);  
   }
 
-  button {
+  .searchButton {
     position: relative;
     display: block;
     left: 50%;

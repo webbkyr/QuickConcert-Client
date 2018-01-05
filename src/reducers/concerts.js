@@ -1,12 +1,14 @@
 import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, SHOW_LANDING, SHOW_LOCATION, SHOW_ABOUT_DESCRIPTION, CONCERT_SELECTED } from '../actions/concerts';
 import {FETCH_LINK_REQUEST, FETCH_LINK_SUCCESS, FETCH_LINK_ERROR  } from '../actions/eventlinks'
 import { SHOW_MODAL, HIDE_MODAL } from '../actions/modal';
+import { FETCH_DETAILS_REQUEST, FETCH_DETAILS_SUCCESS, FETCH_DETAILS_ERROR } from '../actions/event-details';
 
 
 const initialState = {
     landing: null,
     concerts: [],
-    eventLink: [''],
+    eventLink: null,
+    eventDetails: null,
     loading: false,
     error: null,
     isModalOpen: false,
@@ -45,9 +47,18 @@ export const reducer = (state=initialState, action) => {
     return Object.assign({}, state,{loading: true})
 
     case FETCH_LINK_SUCCESS:
-    return Object.assign({}, state, {loading: false, eventLinks: action.data, error: null})
+    return Object.assign({}, state, {loading: false, eventLink: action.data, error: null})
 
     case FETCH_LINK_ERROR:
+    return Object.assign({}, state, {error: action.err})
+
+    case FETCH_DETAILS_REQUEST:
+    return Object.assign({}, state,{loading: true})
+
+    case FETCH_DETAILS_SUCCESS:
+    return Object.assign({}, state, {loading: false, eventDetails: action.data, error: null})
+
+    case FETCH_DETAILS_ERROR:
     return Object.assign({}, state, {error: action.err})
 
     case SHOW_ABOUT_DESCRIPTION:

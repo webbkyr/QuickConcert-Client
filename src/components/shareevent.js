@@ -2,15 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchSharedLink } from '../actions/eventlinks'
 import { hideModal } from '../actions/modal';
-// import { selectConcert } from '../actions/concerts';
 import './modal.css';
+import EventConfirmation from './custom-event-confirmation';
+// import { UserEventDetailsView } from './usereventdetails-view';
 
 
 export class ShareEvent extends React.Component {
 
-//place some opacity on bckg so this will popout more
-// console.log('ShareEvent Props', this.props.concert)
-// console.log(props.selectedConcert.name)
+
 handleCreateEvent(e, concert) {
   e.preventDefault();
   const name = this.input.value;
@@ -28,21 +27,18 @@ handleSelectedConcert() {
   if (this.props.selectedConcert === null) {
     return
   } else {
-    console.log(this.props.selectedConcert.dates.localDate)
     return <div>
           <p>Event Title: {this.props.selectedConcert.name} <br/>
           Date: {this.props.selectedConcert.dates.start.localDate} <br/>
           Time: {this.props.selectedConcert.dates.start.localTime} 
           </p>
           </div>
-
   }
 }
 
 
 render() {
-  return (
-    
+  return (    
     <div className='modal' style={{'display':(this.props.isModalOpen)?'block':'none'}}>
 
     <div className='modal-content'>
@@ -57,6 +53,8 @@ render() {
       required
       name='name'
       placeholder='Your Name'/>
+ 
+      {this.props.eventLink !=null ? <EventConfirmation /> : null}
 
       <button className='closeModal' onClick={() => this.props.dispatch(hideModal())}>Close</button>
       <button 
@@ -77,7 +75,8 @@ export const mapStateToProps = state => {
   return {
     concerts: state.concerts,
     selectedConcert: state.selectedConcert,
-    isModalOpen: state.isModalOpen
+    isModalOpen: state.isModalOpen,
+    eventLink: state.eventLink
   }
 }
 

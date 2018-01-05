@@ -1,11 +1,13 @@
 import React from 'react';
 import { displayLanding } from '../actions/concerts';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Spinner from 'react-spinkit';
 import UserLocation from './userinput';
 import ConcertDetails from './concertdetails';
 import LandingPage from './landingpage';
-import { HandleNoConcerts } from './noresults';
+import  HandleNoConcerts  from './noresults';
+import EventConfirmation from './custom-event-confirmation'
 
 
 
@@ -32,12 +34,15 @@ export class ConcertList extends React.Component {
             )
           } else {
           return (
-            <div>
+            <Router>
+               <div>
               <UserLocation/>
-              <HandleNoConcerts />
+              {console.log(this.props.concerts)}
               <ConcertDetails />
+              {/* BREAKS EVERYTHING --> <Route exact path='/event/:id' component={EventConfirmation} /> */}
               {this.renderData()}
             </div>
+            </Router>
           )
         }  
       }     

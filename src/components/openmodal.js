@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { showModal } from '../actions/modal';
 import { selectConcert } from '../actions/concerts';
-// import { ShareEvent } from './shareevent';
 
 export function OpenModal(props) {
 console.log('OpenModal', props)
