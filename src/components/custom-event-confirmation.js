@@ -1,21 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Link} from 'react-router-dom';
 import {API_BASE_URL} from '../config'
+import { LandingPage } from './landingpage';
+import { fetchEventDetails } from '../actions/event-details';
 
 
 export function EventConfirmation(props) {
-console.log(props)
+console.log(props.eventDetails)
+//if link clicked then show different view
 
   return (
     <p>Share this link with your friends to add attendees! <br/>
-    <Link to='/event/:id'>{API_BASE_URL}/api/concerts/{props.eventLink.id}</Link></p>
+    <span onClick={() => props.dispatch(fetchEventDetails(props.eventLink.id))}>{API_BASE_URL}/api/concerts/{props.eventLink.id}</span></p>
     ) 
   
 }
 
 export const mapStateToProps = state => {
   return {
+    eventDetails: state.eventDetails,
     eventLink: state.eventLink
   }
 }

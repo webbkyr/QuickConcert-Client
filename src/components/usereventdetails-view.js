@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './usereventdetails-view.css';
 import { fetchLinkSuccess } from '../actions/eventlinks';
+// import UserEventDetails from './usereventdetails'
 
 // { __v: 0,
 //   eventName: 'Thrillkiller',
@@ -11,29 +12,30 @@ import { fetchLinkSuccess } from '../actions/eventlinks';
 
 
 export class UserEventDetailsView extends React.Component {
-componentWillMount() {
-  this.props.dispatch(fetchLinkRequest(id))
+componentWillReceiveProps(nextProps) {
+  console.log(nextProps)
 }
+// componentWillMount() {
+//   this.props.dispatch(fetchLinkRequest(id))
+// }
 
 
-renderDetails() {
+// renderDetails() {
 
-  if (this.props.loading) {
-    return <Spinner name="three-bounce" color="olive" fadeIn='none'/>
-  }
-  if (this.props.error) {
-    return <p>{this.props.error}</p>
-  }  
-}
+//   if (this.props.loading) {
+//     return <Spinner name="three-bounce" color="olive" fadeIn='none'/>
+//   }
+//   if (this.props.error) {
+//     return <p>{this.props.error}</p>
+//   }  
+// }
 
   render() {
     return (    
       <div>
         <UserEventDetails />
-        {this.renderDetails}
+        {/* {this.renderDetails} */}
       </div>
-  
-  
     )
   }
 }
@@ -41,7 +43,7 @@ renderDetails() {
 
 
 
-}
+
 
 export const mapStateToProps = state => {
   return {

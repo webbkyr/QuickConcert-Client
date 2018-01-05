@@ -39,7 +39,7 @@ export class ConcertList extends React.Component {
               <UserLocation/>
               {console.log(this.props.concerts)}
               <ConcertDetails />
-              <Route exact path='/event/:id' component={EventConfirmation} />
+              {/* BREAKS EVERYTHING --> <Route exact path='/event/:id' component={EventConfirmation} /> */}
               {this.renderData()}
             </div>
             </Router>
