@@ -6,13 +6,14 @@ import { selectConcert } from '../actions/concerts';
 import { showModal } from '../actions/modal';
 
 export function ConcertDetails(props) {
+  
   const handleActions = (concert) => {
     props.dispatch(selectConcert(concert));
     props.dispatch(showModal());
     
     
-    
   }
+  
   const list = props.concerts.map((concert, index) => {
     return (
       <li key={concert.id}>
