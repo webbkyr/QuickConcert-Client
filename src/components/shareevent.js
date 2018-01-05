@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchSharedLink } from '../actions/eventlinks'
 import { hideModal } from '../actions/modal';
 import './modal.css';
-import { EventConfirmation } from './custom-event-confirmation';
+import  EventConfirmation  from './custom-event-confirmation';
 
 
 export class ShareEvent extends React.Component {
@@ -26,7 +26,6 @@ handleSelectedConcert() {
   if (this.props.selectedConcert === null) {
     return
   } else {
-    console.log(this.props.selectedConcert.dates.localDate)
     return <div>
           <p>Event Title: {this.props.selectedConcert.name} <br/>
           Date: {this.props.selectedConcert.dates.start.localDate} <br/>
@@ -54,7 +53,7 @@ render() {
       name='name'
       placeholder='Your Name'/>
 
-      {this.props.eventLink ? <EventConfirmation /> : null}
+      {this.props.eventLink !=null ? <EventConfirmation /> : null}
 
       <button className='closeModal' onClick={() => this.props.dispatch(hideModal())}>Close</button>
       <button 

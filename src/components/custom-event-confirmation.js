@@ -4,13 +4,13 @@ import {API_BASE_URL} from '../config'
 
 
 export function EventConfirmation(props) {
-console.log('Event ID', props)
+console.log(props)
 
-
-return (
-  <p>Share this link with your friends to add attendees! <br/>
-  {API_BASE_URL}/api/concerts{props.id}</p>
-)
+  return (
+    <p>Share this link with your friends to add attendees! <br/>
+    {API_BASE_URL}/api/concerts/{props.eventLink.id}</p>
+    ) 
+  
 }
 
 export const mapStateToProps = state => {
@@ -18,5 +18,6 @@ export const mapStateToProps = state => {
     eventLink: state.eventLink
   }
 }
+
 
 export default connect(mapStateToProps)(EventConfirmation)
