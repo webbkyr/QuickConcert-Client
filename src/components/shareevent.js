@@ -52,7 +52,7 @@ render() {
       required
       name='name'
       placeholder='Your Name'/>
-
+ 
       {this.props.eventLink !=null ? <EventConfirmation /> : null}
 
       <button className='closeModal' onClick={() => this.props.dispatch(hideModal())}>Close</button>

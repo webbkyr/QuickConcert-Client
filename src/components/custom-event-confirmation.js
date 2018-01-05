@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 import {API_BASE_URL} from '../config'
 
 
@@ -8,7 +9,7 @@ console.log(props)
 
   return (
     <p>Share this link with your friends to add attendees! <br/>
-    {API_BASE_URL}/api/concerts/{props.eventLink.id}</p>
+    <Link to='/event/:id'>{API_BASE_URL}/api/concerts/{props.eventLink.id}</Link></p>
     ) 
   
 }

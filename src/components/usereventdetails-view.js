@@ -11,7 +11,7 @@ import { fetchLinkSuccess } from '../actions/eventlinks';
 
 
 export class UserEventDetailsView extends React.Component {
-componentDidMount() {
+componentWillMount() {
   this.props.dispatch(fetchLinkRequest(id))
 }
 
