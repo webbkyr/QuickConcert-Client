@@ -95,23 +95,3 @@ export const fetchConcerts = function(location){
     };
 };
 
-// export const fetchSharedLink = function(concertInfo) {
-//     return function(dispatch) {
-//         dispatch(fetchLinkRequest());
-//         return fetch(`${API_BASE_URL}/api/concerts`, {
-//             method: 'POST',
-//             body: JSON.stringify(concertInfo),
-//             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-
-//         }).then(res => {
-//             if (!res.ok) {
-//                 return Promise.reject(res.statusText);
-//             }
-//             return res.json();
-//         }).then(event => {
-//             dispatch(fetchLinkSuccess(event));
-//         }).catch(err => {
-//             dispatch(fetchLinkError(err))
-//         })
-//     }
-// }

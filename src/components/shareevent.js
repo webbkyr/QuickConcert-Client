@@ -1,5 +1,4 @@
 import React from 'react';
-import Spinner from 'react-spinkit'
 import { connect } from 'react-redux';
 import { fetchSharedLink } from '../actions/eventlinks'
 import { hideModal } from '../actions/modal';
@@ -9,14 +8,6 @@ import { EventConfirmation } from './custom-event-confirmation';
 
 export class ShareEvent extends React.Component {
 
-// handleFetchData() {
-//     if (this.props.loading) {
-//       return <Spinner name="three-bounce" color="olive" fadeIn='none'/>
-//     }
-//     if (this.props.error) {
-//       return <p>{this.props.error}</p>
-//     }        
-//   }
 
 handleCreateEvent(e, concert) {
   e.preventDefault();
@@ -54,7 +45,6 @@ render() {
       <h1>Share this Concert</h1>
       <div>{this.handleSelectedConcert()}
     </div>
-    {/* {this.handleFetchData()}     */}
 
     <form onSubmit={(e) => this.handleCreateEvent(e, this.props.selectedConcert.name)}>
       <input 
