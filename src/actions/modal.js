@@ -7,7 +7,7 @@ export const showModal = function() {
   }
 }
 
-export const exitModal = function() {
+export const hideModal = function() {
   return {
     type: HIDE_MODAL
   }
