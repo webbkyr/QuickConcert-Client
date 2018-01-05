@@ -5,7 +5,7 @@ import Spinner from 'react-spinkit';
 import UserLocation from './userinput';
 import ConcertDetails from './concertdetails';
 import LandingPage from './landingpage';
-import { HandleNoConcerts } from './noresults';
+import  HandleNoConcerts  from './noresults';
 
 
 
@@ -34,7 +34,7 @@ export class ConcertList extends React.Component {
           return (
             <div>
               <UserLocation/>
-              <HandleNoConcerts />
+              {console.log(this.props.concerts)}
               <ConcertDetails />
               {this.renderData()}
             </div>

@@ -19,5 +19,6 @@ export const mapStateToProps = state => {
   }
 }
 
+//fixed bug on ShareEvent by importing the default connected component EventConfirmation instead of the named non-connected component { EventConfirmation}
 
 export default connect(mapStateToProps)(EventConfirmation)

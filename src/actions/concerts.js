@@ -8,7 +8,7 @@ export const SHOW_ABOUT_DESCRIPTION = 'SHOW ABOUT DESCRIPTION';
 export const CONCERT_SELECTED = 'CONCERT SELECTED';
 
 
-// async actions 
+// sync actions 
 
 export const fetchConcertRequest = function(){
     return {
@@ -54,28 +54,8 @@ export const selectConcert = function(concert){
     }
 }
 
-// export const fetchLinkRequest = function() {
-//     return {
-//         type: FETCH_LINK_REQUEST
-//     }
-// }
 
-// export const fetchLinkSuccess = function() {
-//     return {
-//         type: FETCH_LINK_SUCCESS
-//     }
-// }
 
-// export const fetchLinkError = function() {
-//     return {
-//         type: FETCH_LINK_ERROR
-//     }
-// }
-
-//need action for user input
-
-//async action: there can be more than one
-//pass in arg for dates and location
 export const fetchConcerts = function(location){
 //use url params to pass data
     return function(dispatch){
