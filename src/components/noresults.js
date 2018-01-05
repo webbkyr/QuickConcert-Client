@@ -14,7 +14,7 @@ return (
 
 const mapStateToProps = state => {
   return {
-    concerts: state.concerts
+    concerts: state.concerts || []
   }
 }
 
