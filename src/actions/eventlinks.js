@@ -9,9 +9,11 @@ export const fetchLinkRequest = function() {
   }
 }
 
-export const fetchLinkSuccess = function() {
+export const fetchLinkSuccess = function(data) {
   return {
-      type: FETCH_LINK_SUCCESS
+      type: FETCH_LINK_SUCCESS,
+      data
+
   }
 }
 
@@ -22,6 +24,7 @@ export const fetchLinkError = function() {
 }
 
 export const fetchSharedLink = function(concertInfo) {
+    console.log(concertInfo)
   return function(dispatch) {
       dispatch(fetchLinkRequest());
       return fetch(`${API_BASE_URL}/api/concerts`, {
@@ -35,6 +38,7 @@ export const fetchSharedLink = function(concertInfo) {
           }
           return res.json();
       }).then(event => {
+          console.log(event)
           dispatch(fetchLinkSuccess(event));
       }).catch(err => {
           dispatch(fetchLinkError(err))

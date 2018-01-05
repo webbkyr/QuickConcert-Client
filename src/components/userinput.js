@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { store } from '../store'
 import { fetchConcerts } from '../actions/concerts';
 import './userinput.css';
 
@@ -17,8 +16,9 @@ export class UserLocation extends React.Component {
   render() {
     return (
       <form 
-      id="search-form"
-      onSubmit={(e) => this.handleSubmit(e)}>
+      id='search-form'
+      onSubmit={(e) => {
+        this.handleSubmit(e)}}>
       <input 
         id="search-input"
         type='text' 
