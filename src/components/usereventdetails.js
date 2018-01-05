@@ -11,10 +11,9 @@ const attendeeList = props.eventDetails.attendees.map((attendee, index) => {
 })
   return (
   <div>
-    <h1>{props.eventDetails.eventName}</h1>
-    <p>{props.eventDetails.creator}</p>
-    <p>Attendees:</p>
-    <ul>{attendeeList}</ul>
+    <p>{props.eventDetails.eventName}</p>
+    <p>Creator:{props.eventDetails.creator}</p>
+    <ul>Attendees:{attendeeList}</ul>
   </div>
   )
 }

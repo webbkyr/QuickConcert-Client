@@ -20,7 +20,7 @@ export class ConcertList extends React.Component {
     renderData(){
 
         if (this.props.loading) {
-            return <Spinner name="three-bounce" color="olive" fadeIn='none'/>
+            return <Spinner name="line-scale-pulse-out" color="red" fadeIn='none'/>
           }
           if (this.props.error) {
             return <p>{this.props.error}</p>

@@ -16,7 +16,7 @@ export function ConcertDetails(props) {
   
   const list = props.concerts.map((concert, index) => {
     return (
-      <li key={concert.id}>
+      <li className='tkmConcertList' key={concert.id}>
       <div>{concert.name}</div>
       <div>{concert.classifications[0].genre.name}</div>
       <div>{concert.dates.start.localDate}</div>

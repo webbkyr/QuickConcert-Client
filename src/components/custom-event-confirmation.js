@@ -8,15 +8,14 @@ import  UserEventDetails  from './usereventdetails';
 
 export function EventConfirmation(props) {
 console.log(props.eventDetails)
-//if link clicked then show different view
 
   return (
     <div>
       <p>Share this link with your friends to add attendees! <br/>
       <span 
-    onClick={() => {
-      props.dispatch(fetchEventDetails(props.eventLink.id))}}>
-      {API_BASE_URL}/api/concerts/{props.eventLink.id}
+        onClick={() => {
+        props.dispatch(fetchEventDetails(props.eventLink.id))}}>
+        <a href='#'>{props.eventLink.id}</a>
       </span>
       {props.showEventDetailsView ? <UserEventDetails /> : null}
       </p>
