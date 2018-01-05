@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { store } from '../store'
 import { fetchConcerts } from '../actions/concerts';
 
 export class UserLocation extends React.Component {
@@ -14,7 +13,8 @@ export class UserLocation extends React.Component {
   
   render() {
     return (
-      <form onSubmit={(e) => this.handleSubmit(e)}>
+      <form onSubmit={(e) => {
+        this.handleSubmit(e)}}>
       <input 
         type='text' 
         name='userLocation' 
