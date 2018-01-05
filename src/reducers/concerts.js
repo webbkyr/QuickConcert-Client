@@ -1,4 +1,4 @@
-import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, SHOW_LANDING, SHOW_LOCATION } from '../actions/concerts';
+import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, SHOW_LANDING, SHOW_LOCATION, SHOW_ABOUT_DESCRIPTION } from '../actions/concerts';
 import {FETCH_LINK_REQUEST, FETCH_LINK_SUCCESS, FETCH_LINK_ERROR  } from '../actions/eventlinks'
 
 const initialState = {
@@ -6,7 +6,8 @@ const initialState = {
     concerts: [],
     eventLink: [''],
     loading: false,
-    error: null
+    error: null,
+    about: false
    }
 
 export const reducer = (state=initialState, action) => {
@@ -35,6 +36,9 @@ export const reducer = (state=initialState, action) => {
 
     case FETCH_LINK_ERROR:
     return Object.assign({}, state, {error: action.err})
+
+    case SHOW_ABOUT_DESCRIPTION:
+    return Object.assign({}, state, {about: !state.about})
 
     default:
     break;

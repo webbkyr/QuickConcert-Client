@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BeginConcertSearch from './begin';
+import InfoSection from './about-page';
 import './landingpage.css';
 
 
@@ -12,11 +13,13 @@ export class LandingPage extends React.Component {
      
   return (
     <section id='landing'>
-    <div>
-      {titleText}
-      <BeginConcertSearch />
-
-    </div>
+      <a className="what" href="./about-page.js">About</a>
+      { this.props.about && <InfoSection /> }
+      {/* <InfoSection /> */}
+      <div>
+        {titleText}
+        <BeginConcertSearch />
+      </div>
     </section>
 
   );
@@ -24,6 +27,10 @@ export class LandingPage extends React.Component {
 
 }
 
-//comeback to this later
-
-export default connect()(LandingPage)
+// comeback to this later
+const mapStateToProps = state => {
+  return {
+    about: state.about
+  }
+}
+export default connect(mapStateToProps)(LandingPage)

@@ -4,6 +4,7 @@ export const FETCH_CONCERT_SUCCESS = 'FETCH CONCERT SUCCESS';
 export const FETCH_CONCERT_ERROR = 'FETCH CONCERT ERROR';
 export const SHOW_LANDING = 'SHOW LANDING';
 export const SHOW_LOCATION = 'SHOW LOCATION';
+export const SHOW_ABOUT_DESCRIPTION = 'SHOW ABOUT DESCRIPTION';
 
 
 // async actions 
@@ -37,6 +38,12 @@ export const displayLanding = function() {
 export const displayUserLocation = function() {
     return {
         type: SHOW_LOCATION
+    }
+}
+
+export const aboutPage = function(){
+    return {
+        type: SHOW_ABOUT_DESCRIPTION
     }
 }
 
