@@ -5,27 +5,18 @@ import './ConcertDetails.css';
 import { selectConcert } from '../actions/concerts';
 import { showModal } from '../actions/modal';
 import { withRouter } from 'react-router-dom';
-import SearchResults from './SearchResults';
 
 export function ConcertDetails(props) {
 console.log('ConcertDetails Props', props)
-
-// const handleResults = () => {
-//   props.history.push('/search/concerts');
-// }
-
-// const handleResults = () => {
-//   props.history.push('/search/concerts');
-// }
   
   const handleActions = (concert) => {
     props.dispatch(selectConcert(concert));
     props.dispatch(showModal());
     
-    
   }
   
   const list = props.concerts.map((concert, index) => {
+    console.log(list)
     return (
       <li className='tkmConcertList' key={concert.id}>
       <div>{concert.name}</div>
@@ -40,10 +31,9 @@ console.log('ConcertDetails Props', props)
       </li>
   )});
   return (
-  <ul className='concert-results'>
-  {list}
-  </ul>
-  // <SearchResults props={list} />
+    <ul className='concert-results'>
+      {list}
+    </ul>
   )
 }
 

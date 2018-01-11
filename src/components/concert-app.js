@@ -10,7 +10,6 @@ import Home from './Home';
 // import EventConfirmation from './custom-event-confirmation'
 import  AboutPage  from './About-Page';
 import Header from './Header';
-import SearchResults from './SearchResults'
 
 
 
@@ -31,15 +30,14 @@ export class ConcertApp extends React.Component {
       
           return (
             <div>
-                <Header />
+              <Header />
                 <Switch>
                   <Route exact path='/' component={Home}/>
                   <Route exact path='/about' component={AboutPage} />
                   <Route exact path='/search' component={UserLocation} />
-                  <Route exact path='search/concerts' component={ConcertDetails}
+                  <Route exact path='/search/concerts' component={ConcertDetails}
                   />
                 </Switch>
-              {/* <ConcertDetails /> */}
               {this.renderData()}
             </div>
           )
