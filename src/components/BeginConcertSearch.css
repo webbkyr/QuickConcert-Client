@@ -1,13 +1,15 @@
 .button:hover {
-
-  background-color: rgb(47, 135, 235); /* Green */
-  color: white;
+  background-color: rgb(114, 187, 236);
 }
 
 .button {
-  transition-duration: 0.4s;
-  width: 50px;
-  margin-bottom: 20px;
+  background-color: rgb(52, 139, 238);
+  transition-duration: 0.8s;
+  height: 40px;
+  width: 100px;
+  border-radius: 8px;
+  border: 3px solid black;
+  font-size: 16px;
 }
 
 

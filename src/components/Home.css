@@ -1,20 +1,18 @@
 
-#landing {
+#home {
   text-align: center;
-  font-size: 24px;
-  color: white;
-  margin-top: 100px;
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-  background: rgba(171, 230, 238, 0.5);  
+  background-image: url('./images/nainoa-shizuru-80385.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 750px;
+
 }
 
-h1 {
-  padding-right: 20px;
-  padding-left: 20px;
-  text-shadow: rgb(195, 214, 25) 0 0 10px;  
+#home-title {
+  margin-top: 0;
+  padding-top: 20px;
+  font-size: calc(80px + 2vw);
+  color: white;
 }
 

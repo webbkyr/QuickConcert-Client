@@ -9,10 +9,10 @@ export class Home extends React.Component {
  
 
   render() {
-    let titleText = <h1>quick concert</h1>
+    let titleText = <h1 id='home-title'>quick concert</h1>
      
   return (
-    <section id='landing'>
+    <section id='home'>
       <div>
         {titleText}
         <BeginConcertSearch />

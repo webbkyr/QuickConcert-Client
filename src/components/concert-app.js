@@ -11,6 +11,8 @@ import Home from './Home';
 import  AboutPage  from './About-Page';
 import Header from './Header';
 
+import './ConcertDetails.css';
+
 
 
 export class ConcertApp extends React.Component {
