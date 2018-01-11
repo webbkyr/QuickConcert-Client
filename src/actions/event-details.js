@@ -32,7 +32,6 @@ export const displaUserEventDetails = function() {
 }
 
 export const fetchEventDetails = function(id) {
-  // use url params to pass the id?
   console.log(id)
   return function(dispatch) {
       dispatch(fetchDetailsRequest());

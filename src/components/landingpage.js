@@ -5,6 +5,7 @@ import InfoSection from './about-page';
 import { aboutPage } from '../actions/concerts';
 import './landingpage.css';
 
+//<Link to="/about">About</Link>
 
 export class LandingPage extends React.Component {
  

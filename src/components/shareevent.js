@@ -4,10 +4,9 @@ import { fetchSharedLink } from '../actions/eventlinks'
 import { hideModal } from '../actions/modal';
 import './modal.css';
 import EventConfirmation from './custom-event-confirmation';
-// import { UserEventDetailsView } from './usereventdetails-view';
 
-
-export class ShareEvent extends React.Component {
+//changed from extends component to pureComponent.. behavior is the same
+export class ShareEvent extends React.PureComponent {
 
 
 handleCreateEvent(e, concert) {
