@@ -18,30 +18,29 @@ import './ConcertDetails.css';
 export class ConcertApp extends React.Component {
 
 
-    renderData(){
+  renderData(){
 
-        if (this.props.loading) {
-            return <Spinner name="line-scale-pulse-out" color="red" fadeIn='none'/>
+    if (this.props.loading) {
+      return <Spinner id='spinner' name="line-scale-pulse-out" color="red" fadeIn='none'/>
           }
-          if (this.props.error) {
-            return <p>{this.props.error}</p>
+    if (this.props.error) {
+       return <p>{this.props.error}</p>
           }        
         }
 
-        render() {
+    render() {
       
-          return (
-            <div>
-              <Header />
-                <Switch>
-                  <Route exact path='/' component={Home}/>
-                  <Route exact path='/about' component={AboutPage} />
-                  <Route exact path='/search' component={UserLocation} />
-                  <Route exact path='/search/concerts' component={ConcertDetails}
-                  />
-                </Switch>
-              {this.renderData()}
-            </div>
+      return (
+        <div>
+          <Header />
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/about' component={AboutPage} />
+            <Route exact path='/search' component={UserLocation} />
+            <Route exact path='/search/concerts' component={ConcertDetails}/>
+          </Switch>
+          {this.renderData()}
+      </div>
           )
       
       }     

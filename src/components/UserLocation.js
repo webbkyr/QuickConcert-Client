@@ -16,24 +16,27 @@ export class UserLocation extends React.Component {
   
   render() {
     return (
-      <form 
-      id='search-form'
-      onSubmit={
-        this.handleSubmit.bind(this)}>
-      <input 
-        id="search-input"
-        type='text' 
-        name='userLocation' 
-        ref={input => this.input = input}
-        required 
-        placeholder='Atlanta'/>
-      <button 
-        type='submit' 
-        name='Search' 
-        id='searchButton' 
-        className='searchButton'>
-        Search</button>
-    </form>
+      <div className='user-input-container'>
+        <h2 id='location-question'>Where is your closest city?</h2>
+        <form 
+        id='search-form'
+        onSubmit={
+          this.handleSubmit.bind(this)}>
+        <input 
+          id="search-input"
+          type='text' 
+          name='userLocation' 
+          ref={input => this.input = input}
+          required 
+          placeholder='Atlanta'/>
+        <button 
+          type='submit' 
+          name='Search' 
+          id='searchButton' 
+          className='searchButton'>
+          Search</button>
+      </form>
+    </div>
     )
   }
   

@@ -18,6 +18,7 @@
 
 .concert-results {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   border: 1px solid white;
 
