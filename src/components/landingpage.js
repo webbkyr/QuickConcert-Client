@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BeginConcertSearch from './begin';
-import InfoSection from './about-page';
-import { aboutPage } from '../actions/concerts';
+// import InfoSection from './about-page';
+// import { aboutPage } from '../actions/concerts';
 import { Link } from 'react-router-dom';
 
 import './landingpage.css';

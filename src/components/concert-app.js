@@ -1,14 +1,13 @@
 import React from 'react';
-import { displayLanding } from '../actions/concerts';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { withRouter } from 'react-router'
 import Spinner from 'react-spinkit';
 import UserLocation from './userinput';
 import ConcertDetails from './concertdetails';
 import LandingPage from './landingpage';
-import  HandleNoConcerts  from './noresults';
-import EventConfirmation from './custom-event-confirmation'
+// import  HandleNoConcerts  from './noresults';
+// import EventConfirmation from './custom-event-confirmation'
 import  AboutPage  from './about-page';
 
 
@@ -33,9 +32,9 @@ export class ConcertApp extends React.Component {
       
           return (
             <div>
-              <Route exact path='/' component={LandingPage}/>
-              <Route exact path='/about' component={AboutPage} />
-              <Route exact path='/search' component={UserLocation} />
+                <Route exact path='/' component={LandingPage}/>
+                <Route exact path='/about' component={AboutPage} />
+                <Route exact path='/search' component={UserLocation} />
               <ConcertDetails />
               {this.renderData()}
             </div>
@@ -43,13 +42,9 @@ export class ConcertApp extends React.Component {
       
       }     
 }
-//Switch
-//Link to=
-//<Route exact path='/' component={landingPage}
-//<Route exact path='/search' component={userLocation}
+
 const mapStateToProps = function(state){
     return {
-        landing: state.landing,
         concerts: state.concerts || [],
         loading: state.loading,
         error: state.error,
