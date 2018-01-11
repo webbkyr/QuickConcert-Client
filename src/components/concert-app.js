@@ -15,10 +15,6 @@ import Header from './Header';
 
 export class ConcertApp extends React.Component {
 
-  // componentDidMount() {
-  //   this.props.dispatch(displayLanding())
-  // }
-
 
     renderData(){
 

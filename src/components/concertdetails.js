@@ -7,7 +7,11 @@ import { showModal } from '../actions/modal';
 import { withRouter } from 'react-router-dom';
 
 export function ConcertDetails(props) {
+console.log('ConcertDetails Props', props)
 
+// const handleResults = () => {
+//   props.history.push('/search/concerts');
+// }
   
   const handleActions = (concert) => {
     props.dispatch(selectConcert(concert));
@@ -31,7 +35,10 @@ export function ConcertDetails(props) {
       </li>
   )});
   return (
-  <ul className='concert-results'>{list}</ul>
+  <ul className='concert-results'>
+  {console.log(list)}
+  {list}
+  </ul>
   )
 }
 

@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Link} from 'react-router-dom';
 
 import './about-page.css';
-import { LandingPage } from './landingpage';
 
 export function AboutPage(props) {
 
@@ -20,15 +18,8 @@ export function AboutPage(props) {
         link they are able to hit.
       </p>
       <p>In a nutshell, this app is designed to quickly be able to see concerts in the area of your choosing and invite friends to the event you found.</p>
-      {/* <button onClick={ () => console.log('hell0')}> Close</button> */}
     </section>
   );
 }
-
-// export const mapStateToProps = state => {
-// return ({
-//   about: state.about
-//   })
-// }
 
 export default connect()(AboutPage)
