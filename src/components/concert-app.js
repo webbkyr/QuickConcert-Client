@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router'
 import Spinner from 'react-spinkit';
 import UserLocation from './userinput';
@@ -19,6 +19,7 @@ export class ConcertApp extends React.Component {
   //   this.props.dispatch(displayLanding())
   // }
 
+
     renderData(){
 
         if (this.props.loading) {
@@ -34,10 +35,14 @@ export class ConcertApp extends React.Component {
           return (
             <div>
                 <Header />
-                <Route exact path='/' component={LandingPage}/>
-                <Route exact path='/about' component={AboutPage} />
-                <Route exact path='/search' component={UserLocation} />
-              <ConcertDetails />
+                <Switch>
+                  <Route exact path='/' component={LandingPage}/>
+                  <Route exact path='/about' component={AboutPage} />
+                  <Route exact path='/search' component={UserLocation} />
+                  <Route exact path='search/concerts' component={ConcertDetails}
+                  />
+                </Switch>
+              {/* <ConcertDetails /> */}
               {this.renderData()}
             </div>
           )
