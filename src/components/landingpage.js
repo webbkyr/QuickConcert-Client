@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import BeginConcertSearch from './begin';
 import InfoSection from './about-page';
 import { aboutPage } from '../actions/concerts';
+import { Link } from 'react-router-dom';
+
 import './landingpage.css';
 
 //<Link to="/about">About</Link>
@@ -15,8 +17,10 @@ export class LandingPage extends React.Component {
      
   return (
     <section id='landing'>
-      <a href='#' onClick={() => this.props.dispatch(aboutPage())}>About</a>
-      { this.props.about && <InfoSection /> }
+      <Link to='/about'>About</Link>
+
+      {/* <a href='#' onClick={() => this.props.dispatch(aboutPage())}>About</a>
+      { this.props.about && <InfoSection /> } */}
       <div>
         {titleText}
         <BeginConcertSearch />
@@ -29,9 +33,10 @@ export class LandingPage extends React.Component {
 }
 
 // comeback to this later
-const mapStateToProps = state => {
-  return {
-    about: state.about
-  }
-}
-export default connect(mapStateToProps)(LandingPage)
+// const mapStateToProps = state => {
+//   return {
+//     about: state.about
+//   }
+// }
+
+export default connect()(LandingPage)

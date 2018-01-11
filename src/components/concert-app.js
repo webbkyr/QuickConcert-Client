@@ -8,6 +8,7 @@ import ConcertDetails from './concertdetails';
 import LandingPage from './landingpage';
 import  HandleNoConcerts  from './noresults';
 import EventConfirmation from './custom-event-confirmation'
+import { AboutPage } from './about-page';
 
 
 
@@ -32,10 +33,9 @@ export class ConcertApp extends React.Component {
           return (
             <div>
               <Route exact path='/' component={LandingPage}/>
-              {/* <UserLocation/> */}
-              {console.log(this.props.concerts)}
+              <Route exact path='/about' component={AboutPage} />
+              <Route exact path='/search' component={UserLocation} />
               <ConcertDetails />
-              {/* BREAKS EVERYTHING --> <Route exact path='/event/:id' component={EventConfirmation} /> */}
               {this.renderData()}
             </div>
           )

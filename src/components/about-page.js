@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import './about-page.css';
 
-export function InfoSection(props) {
+export function AboutPage(props) {
 
 
   return (
-    <section id="what" tabIndex="-1">
+    <section id="about" tabIndex="-1">
  
       <h2>What do I do?</h2>
       <p>This is a social event platform.</p>
@@ -19,14 +20,15 @@ export function InfoSection(props) {
         link they are able to hit.
       </div>
       <p>In a nutshell, this app is designed to quickly be able to see concerts in the area of your choosing and invite friends to the event you found.</p>
+      <button onClick={() => <Link to='/'/> }> Go back</button>
     </section>
   );
 }
 
-export const mapStateToProps = state => {
-return ({
-  about: state.about
-  })
-}
+// export const mapStateToProps = state => {
+// return ({
+//   about: state.about
+//   })
+// }
 
-export default connect(mapStateToProps)(InfoSection)
+export default connect()(AboutPage)
