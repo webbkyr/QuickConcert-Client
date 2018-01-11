@@ -11,11 +11,11 @@ import EventConfirmation from './custom-event-confirmation'
 
 
 
-export class ConcertList extends React.Component {
+export class ConcertApp extends React.Component {
 
-  componentDidMount() {
-    this.props.dispatch(displayLanding())
-  }
+  // componentDidMount() {
+  //   this.props.dispatch(displayLanding())
+  // }
 
     renderData(){
 
@@ -28,26 +28,24 @@ export class ConcertList extends React.Component {
         }
 
         render() {
-          if (this.props.landing) {
-            return (
-              <LandingPage />
-            )
-          } else {
+      
           return (
-            <Router>
-               <div>
-              <UserLocation/>
+            <div>
+              <Route exact path='/' component={LandingPage}/>
+              {/* <UserLocation/> */}
               {console.log(this.props.concerts)}
               <ConcertDetails />
               {/* BREAKS EVERYTHING --> <Route exact path='/event/:id' component={EventConfirmation} /> */}
               {this.renderData()}
             </div>
-            </Router>
           )
-        }  
+      
       }     
 }
-
+//Switch
+//Link to=
+//<Route exact path='/' component={landingPage}
+//<Route exact path='/search' component={userLocation}
 const mapStateToProps = function(state){
     return {
         landing: state.landing,
@@ -58,4 +56,4 @@ const mapStateToProps = function(state){
     }
 }
 
-export default connect(mapStateToProps)(ConcertList)
+export default connect(mapStateToProps)(ConcertApp)
