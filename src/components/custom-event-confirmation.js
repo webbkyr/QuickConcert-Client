@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {API_BASE_URL} from '../config'
-import { LandingPage } from './landingpage';
+// import {API_BASE_URL} from '../config'
+// import { LandingPage } from './landingpage';
 import { fetchEventDetails } from '../actions/event-details';
 import  UserEventDetails  from './usereventdetails';
 
