@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import ShareEvent from './shareevent';
-import './concertdetails.css';
+import './ConcertDetails.css';
 import { selectConcert } from '../actions/concerts';
 import { showModal } from '../actions/modal';
 import { withRouter } from 'react-router-dom';

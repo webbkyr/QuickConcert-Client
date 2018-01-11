@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import BeginConcertSearch from './begin';
+import BeginConcertSearch from './BeginConcertSearch';
 
-import './landingpage.css';
+import './Home.css';
 
 
-export class LandingPage extends React.Component {
+export class Home extends React.Component {
  
 
   render() {
@@ -24,4 +24,4 @@ export class LandingPage extends React.Component {
 
 }
 
-export default connect()(LandingPage)
+export default connect()(Home)

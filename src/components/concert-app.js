@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router'
 import Spinner from 'react-spinkit';
-import UserLocation from './userinput';
-import ConcertDetails from './concertdetails';
-import LandingPage from './landingpage';
+import UserLocation from './UserLocation';
+import ConcertDetails from './ConcertDetails';
+import Home from './Home';
 // import  HandleNoConcerts  from './noresults';
 // import EventConfirmation from './custom-event-confirmation'
 import  AboutPage  from './about-page';
@@ -32,7 +32,7 @@ export class ConcertApp extends React.Component {
             <div>
                 <Header />
                 <Switch>
-                  <Route exact path='/' component={LandingPage}/>
+                  <Route exact path='/' component={Home}/>
                   <Route exact path='/about' component={AboutPage} />
                   <Route exact path='/search' component={UserLocation} />
                   <Route exact path='search/concerts' component={ConcertDetails}

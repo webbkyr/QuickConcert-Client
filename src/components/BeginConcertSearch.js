@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './begin.css'
+import './BeginConcertSearch.css'
 import { withRouter } from 'react-router-dom';
 
 export function BeginConcertSearch(props) {

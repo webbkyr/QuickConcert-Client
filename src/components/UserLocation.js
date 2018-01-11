@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchConcerts } from '../actions/concerts';
-import './userinput.css';
+import './UserLocation.css';
 
 
 export class UserLocation extends React.Component {
