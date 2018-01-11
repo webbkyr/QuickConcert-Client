@@ -1,14 +1,15 @@
 import React from 'react';
 import { displayLanding } from '../actions/concerts';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { withRouter } from 'react-router'
 import Spinner from 'react-spinkit';
 import UserLocation from './userinput';
 import ConcertDetails from './concertdetails';
 import LandingPage from './landingpage';
 import  HandleNoConcerts  from './noresults';
 import EventConfirmation from './custom-event-confirmation'
-import { AboutPage } from './about-page';
+import  AboutPage  from './about-page';
 
 
 
@@ -56,4 +57,4 @@ const mapStateToProps = function(state){
     }
 }
 
-export default connect(mapStateToProps)(ConcertApp)
+export default withRouter(connect(mapStateToProps)(ConcertApp))
