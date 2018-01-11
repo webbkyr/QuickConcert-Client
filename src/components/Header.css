@@ -9,6 +9,7 @@ header {
 }
 
 .about-link, .search-link, .home-link {
+  list-style-type: none;
   color: white;
   padding: 10px;
 }
