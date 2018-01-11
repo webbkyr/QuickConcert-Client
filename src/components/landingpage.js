@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 import './landingpage.css';
 
-//<Link to="/about">About</Link>
 
 export class LandingPage extends React.Component {
  
@@ -17,10 +16,6 @@ export class LandingPage extends React.Component {
      
   return (
     <section id='landing'>
-      <Link to='/about'>About</Link>
-
-      {/* <a href='#' onClick={() => this.props.dispatch(aboutPage())}>About</a>
-      { this.props.about && <InfoSection /> } */}
       <div>
         {titleText}
         <BeginConcertSearch />

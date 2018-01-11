@@ -9,6 +9,7 @@ import LandingPage from './landingpage';
 // import  HandleNoConcerts  from './noresults';
 // import EventConfirmation from './custom-event-confirmation'
 import  AboutPage  from './about-page';
+import Header from './Header';
 
 
 
@@ -32,6 +33,7 @@ export class ConcertApp extends React.Component {
       
           return (
             <div>
+                <Header />
                 <Route exact path='/' component={LandingPage}/>
                 <Route exact path='/about' component={AboutPage} />
                 <Route exact path='/search' component={UserLocation} />

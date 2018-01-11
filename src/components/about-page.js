@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import './about-page.css';
+import { LandingPage } from './landingpage';
 
 export function AboutPage(props) {
-
 
   return (
     <section id="about" tabIndex="-1">
@@ -20,7 +20,7 @@ export function AboutPage(props) {
         link they are able to hit.
       </p>
       <p>In a nutshell, this app is designed to quickly be able to see concerts in the area of your choosing and invite friends to the event you found.</p>
-      <button onClick={() => console.log('hello') }> Go back</button>
+      {/* <button onClick={ () => console.log('hell0')}> Close</button> */}
     </section>
   );
 }

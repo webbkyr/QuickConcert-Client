@@ -1,0 +1,14 @@
+header {
+  margin: 0 auto;
+}
+
+
+.nav-list-section {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.about-link, .search-link {
+  color: white;
+  padding: 10px;
+}
