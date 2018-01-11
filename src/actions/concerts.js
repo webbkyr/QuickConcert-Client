@@ -7,7 +7,7 @@ export const SHOW_LOCATION = 'SHOW LOCATION';
 export const SHOW_ABOUT_DESCRIPTION = 'SHOW ABOUT DESCRIPTION';
 export const CONCERT_SELECTED = 'CONCERT SELECTED';
 
-
+//components shouldnt do logic 
 
 // sync actions 
 
@@ -17,7 +17,8 @@ export const fetchConcertRequest = function(){
     }
 }
 
-export const fetchConcertSuccess = function(data){
+export const fetchConcertSuccess = function(data, history){
+    history.push('/search/concerts')
     return {
         type: FETCH_CONCERT_SUCCESS,
         data
@@ -42,7 +43,9 @@ export const selectConcert = function(concert){
 
 //async action: there can be more than one
 //pass in arg for dates and location
-export const fetchConcerts = function(location){
+export const fetchConcerts = function(location, history){
+    console.log(history);
+    // history.push('/search/concerts');
 //use url params to pass data
     return function(dispatch){
         dispatch(fetchConcertRequest());
@@ -54,7 +57,7 @@ export const fetchConcerts = function(location){
             }
             return res.json();
         }).then(concert => {
-            dispatch(fetchConcertSuccess(concert));
+            dispatch(fetchConcertSuccess(concert, history));
         }).catch(err => {
             dispatch(fetchConcertError(err))
         })

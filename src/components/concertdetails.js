@@ -5,9 +5,14 @@ import './ConcertDetails.css';
 import { selectConcert } from '../actions/concerts';
 import { showModal } from '../actions/modal';
 import { withRouter } from 'react-router-dom';
+import SearchResults from './SearchResults';
 
 export function ConcertDetails(props) {
 console.log('ConcertDetails Props', props)
+
+// const handleResults = () => {
+//   props.history.push('/search/concerts');
+// }
 
 // const handleResults = () => {
 //   props.history.push('/search/concerts');
@@ -36,9 +41,9 @@ console.log('ConcertDetails Props', props)
   )});
   return (
   <ul className='concert-results'>
-  {console.log(list)}
   {list}
   </ul>
+  // <SearchResults props={list} />
   )
 }
 

@@ -8,8 +8,9 @@ import ConcertDetails from './ConcertDetails';
 import Home from './Home';
 // import  HandleNoConcerts  from './noresults';
 // import EventConfirmation from './custom-event-confirmation'
-import  AboutPage  from './about-page';
+import  AboutPage  from './About-Page';
 import Header from './Header';
+import SearchResults from './SearchResults'
 
 
 
