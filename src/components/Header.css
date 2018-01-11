@@ -5,10 +5,15 @@ header {
 
 .nav-list-section {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
-.about-link, .search-link {
+.about-link, .search-link, .home-link {
   color: white;
   padding: 10px;
 }
+
+ a {
+   text-decoration: none;
+   color: white;
+ }

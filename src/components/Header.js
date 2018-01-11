@@ -7,6 +7,11 @@ export default function Header() {
   <header>
     <nav>
       <ul className='nav-list-section'>
+      <li className='home-link'>
+          <Link to='/'>
+            Home
+          </Link>
+        </li>
         <li className='about-link'>
           <Link to='/about'>
             About 
