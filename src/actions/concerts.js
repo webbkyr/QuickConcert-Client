@@ -31,23 +31,6 @@ export const fetchConcertError = function(err){
     }
 }
 
-export const displayLanding = function() {
-    return {
-        type: SHOW_LANDING
-    }
-}
-
-export const displayUserLocation = function() {
-    return {
-        type: SHOW_LOCATION
-    }
-}
-
-export const aboutPage = function(){
-    return {
-        type: SHOW_ABOUT_DESCRIPTION
-    }
-}
 
 export const selectConcert = function(concert){
     return {

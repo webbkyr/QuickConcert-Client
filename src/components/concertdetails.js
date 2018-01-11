@@ -8,7 +8,6 @@ import { withRouter } from 'react-router-dom';
 
 export function ConcertDetails(props) {
 
-  this.props.history.push('/search/concerts');
   
   const handleActions = (concert) => {
     props.dispatch(selectConcert(concert));

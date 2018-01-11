@@ -1,11 +1,10 @@
-import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, SHOW_LANDING, SHOW_LOCATION, SHOW_ABOUT_DESCRIPTION, CONCERT_SELECTED } from '../actions/concerts';
+import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, CONCERT_SELECTED } from '../actions/concerts';
 import {FETCH_LINK_REQUEST, FETCH_LINK_SUCCESS, FETCH_LINK_ERROR  } from '../actions/eventlinks'
 import { SHOW_MODAL, HIDE_MODAL } from '../actions/modal';
 import { FETCH_DETAILS_REQUEST, FETCH_DETAILS_SUCCESS, FETCH_DETAILS_ERROR } from '../actions/event-details';
 
 
 const initialState = {
-    landing: null,
     concerts: [],
     eventLink: null,
     eventDetails: null,
@@ -14,7 +13,6 @@ const initialState = {
     error: null,
     isModalOpen: false,
     selectedConcert: null,
-    about: false
    }
 
 export const reducer = (state=initialState, action) => {
@@ -28,12 +26,6 @@ export const reducer = (state=initialState, action) => {
 
     case HIDE_MODAL:
     return Object.assign({}, state, {isModalOpen: false})
-
-    case SHOW_LANDING:
-    return Object.assign({}, state, {landing: true})
-
-    case SHOW_LOCATION:
-    return Object.assign({}, state, {landing: false})
 
     case FETCH_CONCERT_REQUEST:
     return Object.assign({}, state, {loading: true})
@@ -61,9 +53,6 @@ export const reducer = (state=initialState, action) => {
 
     case FETCH_DETAILS_ERROR:
     return Object.assign({}, state, {error: action.err})
-
-    case SHOW_ABOUT_DESCRIPTION:
-    return Object.assign({}, state, {about: !state.about})
 
     default:
     break;
