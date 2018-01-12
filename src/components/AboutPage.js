@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './About-Page.css';
+import './AboutPage.css';
 
 export function AboutPage(props) {
 
