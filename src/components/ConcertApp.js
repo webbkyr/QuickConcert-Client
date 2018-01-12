@@ -7,7 +7,7 @@ import UserLocation from './UserLocation';
 import ConcertDetails from './Concert-Details';
 import Home from './Home';
 // import  HandleNoConcerts  from './noresults';
-import  AboutPage  from './About-Page';
+import  AboutPage  from './AboutPage';
 import Header from './Header';
 import UserEventDetails from './usereventdetails';
 import { AnimatedSwitch } from 'react-router-transition';
