@@ -21,5 +21,21 @@
 }
 
 #concert-name {
+  /* color:  rgb(52, 139, 238); */
+  font-weight: bold;
   max-width: 120px;
 }
+
+#share-button, #buy-tickets-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: rgb(52, 139, 238);
+  transition-duration: 0.8s;
+  /* height: 40px; */
+  /* width: 120px; */
+  border-radius: 8px;
+  border: 3px solid black;
+  font-size: 16px;
+}
+

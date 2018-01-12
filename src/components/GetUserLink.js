@@ -4,6 +4,8 @@
 // import { fetchLinkSuccess } from '../actions/eventlinks';
 // // import UserEventDetails from './usereventdetails'
 
+//get the event id from the history prop
+
 // // { __v: 0,
 // //   eventName: 'Thrillkiller',
 // //   creator: 'Kim',

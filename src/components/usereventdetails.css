@@ -1,0 +1,21 @@
+.event-details-container {
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.attendees-container {
+  text-align: center;
+  color: white;
+  padding: 0;
+  /* margin: 0 auto; */
+}
+
+.my-event {
+  font-size: 24px;
+  color: white;
+}
+
+#user-event-name, #user-event-creator, #event-attendees {
+  color: white;
+}

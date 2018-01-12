@@ -1,29 +1,56 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
+import { fetchEventDetails } from '../actions/event-details';
+import './usereventdetails.css';
+//do componentdidmount, do the fetch event details to get the data back
 
-export function UserEventDetails(props) {
-console.log('User event details props', props)
+export class UserEventDetails extends React.Component {
 
-// const attendeeList = props.eventDetails.attendees.map((attendee, index) => {
-//   return (
-//     <li key={index}>{attendee.attendee}</li>
-//   )
-// })
-  return (
-  // <div>
-  //   <p>{props.eventDetails.eventName}</p>
-  //   <p>Creator:{props.eventDetails.creator}</p>
-  //   <ul>Attendees:{attendeeList}</ul>
-  // </div>
-  <div>
-    <p>Test</p>
-    </div>
-  )
+  componentDidMount() {
+    if (this.props.eventId) {
+    this.props.dispatch(fetchEventDetails(this.props.eventId))
+    } else {
+      return;
+    }
+
 }
 
-const mapStateToProps = state => {
+render() {
+
+  console.log('User event details props', this.props)
+
+
+  let eventName = '';
+  let creator = '';
+  let attendeeList = '';
+
+  if (this.props.eventDetails) {
+    eventName = this.props.eventDetails.eventName;
+    creator = this.props.eventDetails.creator;
+    attendeeList = this.props.eventDetails.attendees.map((attendee, index) => {
+      return (
+        <li id='event-attendees' key={index}>{attendee.attendee}</li>
+      )
+    })
+  } else {
+    return '';
+  }
+    return (
+      <div className='event-details-container'>
+        <p className='my-event'>My Event</p>
+        <p id='user-event-name'>{eventName}</p>
+        <p id='user-event-creator'>Creator: {creator}</p>
+        <ul className='attendees-container'>Current Attendees: {attendeeList}</ul>
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = (state, props) => {
+  const eventId = props.match.params.eventId
   return {
+    eventId,
     eventDetails: state.eventDetails,
   }
 }
