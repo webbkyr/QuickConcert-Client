@@ -5,7 +5,7 @@ import './ConcertDetails.css';
 import { selectConcert } from '../actions/concerts';
 import { showModal } from '../actions/modal';
 import { withRouter } from 'react-router-dom'
-import * as moment from 'moment';
+// import * as moment from 'moment';
 
 export function ConcertDetails(props) {
   

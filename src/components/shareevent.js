@@ -6,8 +6,7 @@ import './modal.css';
 import EventConfirmation from './custom-event-confirmation';
 
 //changed from extends component to pureComponent.. behavior is the same
-export class ShareEvent extends React.PureComponent {
-
+export class ShareEvent extends React.Component {
 
 handleCreateEvent(e, concert) {
   e.preventDefault();
@@ -46,7 +45,7 @@ render() {
     </div>
 
     <form onSubmit={(e) => this.handleCreateEvent(e, this.props.selectedConcert.name)}>
-      <input 
+      <input className='modal-input'
       type='text'  
       ref={input => this.input = input}
       required
