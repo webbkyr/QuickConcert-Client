@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom';
 
 export function UserEventDetails(props) {
 console.log('User event details props', props)
@@ -24,4 +25,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(UserEventDetails)
+export default withRouter(connect(mapStateToProps)(UserEventDetails));

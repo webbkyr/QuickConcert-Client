@@ -7,9 +7,9 @@ import UserLocation from './UserLocation';
 import ConcertDetails from './ConcertDetails';
 import Home from './Home';
 // import  HandleNoConcerts  from './noresults';
-// import EventConfirmation from './custom-event-confirmation'
 import  AboutPage  from './About-Page';
 import Header from './Header';
+import UserEventDetails from './usereventdetails';
 import { AnimatedSwitch } from 'react-router-transition';
 
 import './Concert-App.css';
@@ -44,6 +44,7 @@ export class ConcertApp extends React.Component {
               <Route exact path='/about' component={AboutPage} />
               <Route exact path='/search' component={UserLocation} />
               <Route exact path='/search/concerts' component={ConcertDetails}/>
+              <Route exact path='/event/:eventId' component={UserEventDetails} />
             </Switch>
           </AnimatedSwitch>
           {this.renderData()}
