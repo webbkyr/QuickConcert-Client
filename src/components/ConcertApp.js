@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router'
 import Spinner from 'react-spinkit';
 import UserLocation from './UserLocation';
-import ConcertDetails from './ConcertDetails';
+import ConcertDetails from './Concert-Details';
 import Home from './Home';
 // import  HandleNoConcerts  from './noresults';
 import  AboutPage  from './About-Page';
