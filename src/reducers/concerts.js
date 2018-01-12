@@ -2,6 +2,7 @@ import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, CONC
 import {FETCH_LINK_REQUEST, FETCH_LINK_SUCCESS, FETCH_LINK_ERROR  } from '../actions/eventlinks'
 import { SHOW_MODAL, HIDE_MODAL } from '../actions/modal';
 import { FETCH_DETAILS_REQUEST, FETCH_DETAILS_SUCCESS, FETCH_DETAILS_ERROR } from '../actions/event-details';
+import { CREATOR_UPDATE_REQUEST, CREATOR_UPDATE_SUCCESS, CREATOR_UPDATE_ERROR } from '../actions/event-updates';
 
 
 const initialState = {
@@ -13,6 +14,7 @@ const initialState = {
     error: null,
     isModalOpen: false,
     selectedConcert: null,
+    isCreatorUpdated: null
    }
 
 export const reducer = (state=initialState, action) => {
@@ -53,6 +55,9 @@ export const reducer = (state=initialState, action) => {
 
     case FETCH_DETAILS_ERROR:
     return Object.assign({}, state, {error: action.err})
+
+    case CREATOR_UPDATE_SUCCESS:
+    return Object.assign(state, {eventDetails: {creator: action.data.creator}})
 
     default:
     break;

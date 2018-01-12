@@ -1,0 +1,9 @@
+#event-link {
+  text-decoration: underline;
+}
+
+#event-link:hover {
+  background-color: rgb(72, 156, 235);
+  text-decoration-color: yellow;
+
+}

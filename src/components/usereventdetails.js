@@ -8,7 +8,6 @@ import  UpdateCreator  from './UpdateCreator';
 
 export class UserEventDetails extends React.Component {
 
-
   componentDidMount() {
     if (this.props.eventId) {
     this.props.dispatch(fetchEventDetails(this.props.eventId))
@@ -18,7 +17,6 @@ export class UserEventDetails extends React.Component {
     }
 
 }
-
 
 render() {
 

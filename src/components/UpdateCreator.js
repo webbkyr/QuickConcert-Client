@@ -1,50 +1,80 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './UpdateCreator.css';
 import { connect } from 'react-redux';
+import { sendCreatorUpdate } from '../actions/event-updates';
 
-export class UpdateCreator extends React.Component {
+ class UpdateCreator extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       editor: false,
-      value: this.props.name
+      isUpdated: false,
+      name: this.props.updatedName
     }
   }
 
+  //once the store changes, re-render the component to update
+
+// shouldComponentUpdate() {
+//   if (this.state.isUpdated) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+//   //set condition if state.editor changes then return true
+//   //else return false CAN ONLY RETURN A BOOLEAN VALUE
+//   //IF true the component will re-render
+// }
+
   toggle() {
     this.setState({
-      editor: !this.state.editor
+      editor: true
     })
   }
 
-  onChange(input) {
+
+  handleUpdate(value) {
+    const creator = value;
+    const creatorInfo = ({
+      id: this.props.match.params.eventId,
+      creator
+    })
+    this.props.dispatch(sendCreatorUpdate(creatorInfo))
     this.setState({
-      value: input
+      editor: false
     })
-  }
-
-  handleUpdate(input) {
-    //write an async action that updates the name of the creator
-    this.props.dispatch()
+    console.log(this.refs.creator.value);
+    // document.getElementById('user-event-creator').innerText = this.refs.creator.value;
+    window.location.reload();
   }
 
 render() {
+  console.log(this.props.match.params)
+  console.log('Updated Name', this.props.updatedName)
+
   if (this.state.editor) {
+    console.log(this.props)
     return (
     <div>
-     <p className='editor-creator'>Creator: <input type='text' onChange={input => this.onChange(input)}value={this.props.name} /></p>
-     <button>Submit</button>
+     <p className='editor-creator'>Creator: <input type='text' defaultValue={this.props.name} ref="creator" /></p>
+     <button type='button' onClick={() => this.handleUpdate(this.refs.creator.value)}>Submit</button>
     </div>
       )
   } else {
       return (
-       <p onClick={() => this.toggle()} id='user-event-creator'>Creator: {this.props.name}
+       <p onClick={() => this.toggle()} id='user-event-creator'>Creator: {this.props.name} <br/>
+       {this.state.updatedName}
       </p>
     )
   }
-}
-  
-  
+} 
 }
 
-export default connect()(UpdateCreator)
+const mapStateToProps = props => {
+  return {
+    updatedName: props.eventDetails.creator
+  }
+}
+
+export default withRouter(connect(mapStateToProps)(UpdateCreator));
