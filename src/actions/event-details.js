@@ -32,8 +32,8 @@ export const displaUserEventDetails = function() {
 }
 
 export const fetchEventDetails = function(id) {
-  console.log(id)
-  return function(dispatch) {
+
+    return function(dispatch) {
       dispatch(fetchDetailsRequest());
       return fetch(`${API_BASE_URL}/api/concerts/${id}`, {
           method: 'GET',

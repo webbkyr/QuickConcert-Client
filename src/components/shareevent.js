@@ -4,9 +4,8 @@ import { fetchSharedLink } from '../actions/eventlinks'
 import { hideModal } from '../actions/modal';
 import './modal.css';
 import EventConfirmation from './EventConfirmation';
-// import { fetchEventDetails } from '../actions/event-details';
 
-//changed from extends component to pureComponent.. behavior is the same
+
 export class ShareEvent extends React.Component {
 
 handleCreateEvent(e, concert) {
@@ -18,7 +17,6 @@ handleCreateEvent(e, concert) {
     attendee: name
   })
 
-  console.log(concertInfo);
   this.props.dispatch(fetchSharedLink(concertInfo));
 }
 

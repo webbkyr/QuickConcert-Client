@@ -2,12 +2,8 @@ import { API_BASE_URL } from '../config';
 export const FETCH_CONCERT_REQUEST = 'FETCH CONCERT REQUEST';
 export const FETCH_CONCERT_SUCCESS = 'FETCH CONCERT SUCCESS';
 export const FETCH_CONCERT_ERROR = 'FETCH CONCERT ERROR';
-export const SHOW_LANDING = 'SHOW LANDING';
-export const SHOW_LOCATION = 'SHOW LOCATION';
-export const SHOW_ABOUT_DESCRIPTION = 'SHOW ABOUT DESCRIPTION';
 export const CONCERT_SELECTED = 'CONCERT SELECTED';
 
-//components shouldnt do logic 
 
 // sync actions 
 
@@ -41,12 +37,10 @@ export const selectConcert = function(concert){
 
 
 
-//async action: there can be more than one
-//pass in arg for dates and location
+//async action
+
 export const fetchConcerts = function(location, history){
-    console.log(history);
-    // history.push('/search/concerts');
-//use url params to pass data
+
     return function(dispatch){
         dispatch(fetchConcertRequest());
         return fetch(`${API_BASE_URL}/api/concerts?city=${location}`)
