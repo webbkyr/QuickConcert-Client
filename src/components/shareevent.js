@@ -17,6 +17,7 @@ handleCreateEvent(e, concert) {
     attendee: name
   })
 
+  console.log(concertInfo);
   this.props.dispatch(fetchSharedLink(concertInfo));
 }
 
