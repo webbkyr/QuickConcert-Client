@@ -8,7 +8,7 @@ export function AboutPage(props) {
   return (
     <section id="about" tabIndex="-1">
  
-      <h2>What do I do?</h2>
+      <h2>What is this?</h2>
       <p>This is a social event platform.</p>
       <p>
         This application is geared to quickly find concerts in a specified area.
