@@ -7,8 +7,14 @@ import { withRouter } from 'react-router-dom'
 // import * as moment from 'moment';
 
 import './Concert-Details.css';
+import  HandleNoConcerts  from './noresults';
 
 export function ConcertDetails(props) {
+  console.log('Concert details props', props);
+
+  if (props.concerts.length < 1) {
+    return <HandleNoConcerts />
+  }
   
   const handleActions = (concert) => {
     props.dispatch(selectConcert(concert));

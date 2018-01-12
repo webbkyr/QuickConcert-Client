@@ -3,19 +3,11 @@ import { connect } from 'react-redux'
 import './noresults.css';
 
 export function HandleNoConcerts(props) {
-console.log(props)
 return (
-      <p className='noresults'>Sorry, no concerts tonight.</p>
+      <p className='noresults'>Sorry, no concerts in this area tonight.</p> 
     )
 }
 
 
-const mapStateToProps = state => {
-    return {
-      concerts: state.concerts || []
-    }
-  }
+export default connect()(HandleNoConcerts)
 
-export default connect(mapStateToProps)(HandleNoConcerts)
-
-//currently not working
