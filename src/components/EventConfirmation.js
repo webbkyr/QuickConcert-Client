@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchEventDetails } from '../actions/event-details';
-import  UserEventDetails  from './usereventdetails';
-import { Link } from 'react-router-dom';
-const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+// import { fetchEventDetails } from '../actions/event-details';
+// import  UserEventDetails  from './usereventdetails';
+// import { Link } from 'react-router-dom';
+// const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
 
 
 export function EventConfirmation(props) {
