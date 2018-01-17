@@ -52,7 +52,7 @@ const mapStateToProps = (state, props) => {
   const eventId = props.match.params.eventId
   return {
     eventId,
-    eventDetails: state.eventDetails,
+    eventDetails: state.detailsReducer.eventDetails,
   }
 }
 

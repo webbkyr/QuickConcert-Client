@@ -71,10 +71,10 @@ render() {
 
 export const mapStateToProps = state => {
   return {
-    concerts: state.concerts,
-    selectedConcert: state.selectedConcert,
-    isModalOpen: state.isModalOpen,
-    eventLink: state.eventLink
+    concerts: state.concertsReducer.concerts,
+    selectedConcert: state.concertsReducer.selectedConcert,
+    isModalOpen: state.modalReducer.isModalOpen,
+    eventLink: state.eventLinkReducer.eventLink
   }
 }
 

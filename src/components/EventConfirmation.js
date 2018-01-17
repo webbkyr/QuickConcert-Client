@@ -18,7 +18,7 @@ export function EventConfirmation(props) {
 
 export const mapStateToProps = (state, props) => {
   return {
-    eventLink: state.eventLink
+    eventLink: state.eventLinkReducer.eventLink
   }
 }
 

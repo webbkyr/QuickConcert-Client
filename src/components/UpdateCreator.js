@@ -50,6 +50,7 @@ import { sendCreatorUpdate } from '../actions/event-updates';
   }
 
 render() {
+  console.log('UpdateCreator props', this.props)
   console.log(this.props.match.params)
   console.log('Updated Name', this.props.updatedName)
 
@@ -71,9 +72,12 @@ render() {
 } 
 }
 
+
+//commenting this out until a better fix can be tested
 const mapStateToProps = props => {
   return {
-    updatedName: props.eventDetails.creator
+    currentName: props.detailsReducer.eventDetails.creator,
+    updatedName: props.updatesReducer.creatorUpdates
   }
 }
 

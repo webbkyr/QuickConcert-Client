@@ -22,10 +22,9 @@ export function ConcertDetails(props) {
     
   }
 
-  //07:40:00
   
   const list = props.concerts.map((concert, index) => {
-    // console.log(moment().format(`${concert.dates.start.localTime}, hh:mm a`));
+    
     return (
       <li className='tkmConcertList' key={concert.id}>
       <div id='concert-name'>{concert.name}</div>
@@ -48,7 +47,7 @@ export function ConcertDetails(props) {
 
 const mapStateToProps = state => {
   return {
-    concerts: state.concerts,
+    concerts: state.concertsReducer.concerts,
   }
 }
 
