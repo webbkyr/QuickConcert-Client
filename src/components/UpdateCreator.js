@@ -8,9 +8,7 @@ import { sendCreatorUpdate } from '../actions/event-updates';
   constructor(props) {
     super(props)
     this.state = {
-      editor: false,
-      isUpdated: false,
-      name: this.props.updatedName
+      editor: false
     }
   }
 
@@ -29,7 +27,7 @@ import { sendCreatorUpdate } from '../actions/event-updates';
 
   toggle() {
     this.setState({
-      editor: true
+      editor: !this.state.editor
     })
   }
 
@@ -42,30 +40,36 @@ import { sendCreatorUpdate } from '../actions/event-updates';
     })
     this.props.dispatch(sendCreatorUpdate(creatorInfo))
     this.setState({
-      editor: false
+      editor: !this.state.editor
     })
-    console.log(this.refs.creator.value);
-    // document.getElementById('user-event-creator').innerText = this.refs.creator.value;
-    window.location.reload();
+    console.log('Creator Update Value', this.refs.creator.value);
+
+    // window.location.reload();
   }
 
 render() {
-  console.log('UpdateCreator props', this.props)
-  console.log(this.props.match.params)
-  console.log('Updated Name', this.props.updatedName)
+
 
   if (this.state.editor) {
-    console.log(this.props)
     return (
     <div>
-     <p className='editor-creator'>Creator: <input type='text' defaultValue={this.props.name} ref="creator" /></p>
-     <button type='button' onClick={() => this.handleUpdate(this.refs.creator.value)}>Submit</button>
+     <p 
+      className='editor-creator'>Creator: 
+      <input type='text' defaultValue={this.props.creator} ref="creator" />
+    </p>
+     <button 
+      type='button' 
+      onClick={() => this.handleUpdate(this.refs.creator.value)}>Submit
+    </button>
+      <button
+        type='button'
+        onClick={() => this.toggle()}>Close editor
+      </button>
     </div>
       )
   } else {
       return (
-       <p onClick={() => this.toggle()} id='user-event-creator'>Creator: {this.props.name} <br/>
-       {this.state.updatedName}
+       <p onClick={() => this.toggle()} id='user-event-creator'>Creator: {this.props.creator} <br/>
       </p>
     )
   }
@@ -75,9 +79,10 @@ render() {
 
 //commenting this out until a better fix can be tested
 const mapStateToProps = props => {
+  console.log('UpdatedName in mapd2p', props.updatesReducer.creatorUpdates.creator)
   return {
-    currentName: props.detailsReducer.eventDetails.creator,
-    updatedName: props.updatesReducer.creatorUpdates
+    creator: props.detailsReducer.eventDetails.creator,
+    updatedName: props.updatesReducer.creatorUpdates.creator
   }
 }
 

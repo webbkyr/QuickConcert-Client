@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
+// import { Route, Switch, Redirect } from './Router-Connect';
 import { withRouter } from 'react-router'
 import Spinner from 'react-spinkit';
 import UserLocation from './UserLocation';

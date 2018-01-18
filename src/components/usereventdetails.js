@@ -41,7 +41,7 @@ render() {
       <div className='event-details-container'>
         <p className='my-event'>My Event</p>
         <p id='user-event-name'>{eventName}</p>
-        <UpdateCreator name={creator}/>
+        <UpdateCreator />
         <ul className='attendees-container'>Current Attendees: {attendeeList}</ul>
       </div>
     )
@@ -57,3 +57,5 @@ const mapStateToProps = (state, props) => {
 }
 
 export default withRouter(connect(mapStateToProps)(UserEventDetails));
+
+//remove the name prop that is being passed to UpdateCreator
