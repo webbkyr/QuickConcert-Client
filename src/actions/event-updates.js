@@ -40,7 +40,7 @@ export const sendCreatorUpdate = function(creatorInfo) {
           }
           return res.json();
       }).then(creator => {
-          console.log('Creator sent from async', creator)
+          console.log('Creator sent from server', creator)
           dispatch(creatorUpdateSuccess(creator));
       }).catch(err => {
           dispatch(creatorUpdateError(err))

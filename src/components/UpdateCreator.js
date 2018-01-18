@@ -55,7 +55,7 @@ render() {
     <div>
      <p 
       className='editor-creator'>Creator: 
-      <input type='text' defaultValue={this.props.creator} ref="creator" />
+      <input type='text' defaultValue={this.state.creator} ref="creator" />
     </p>
      <button 
       type='button' 
@@ -79,10 +79,10 @@ render() {
 
 //commenting this out until a better fix can be tested
 const mapStateToProps = props => {
-  // console.log('UpdatedName in mapd2p', props.updatesReducer.creatorUpdates.creator)
+  console.log('UpdatedName in mapd2p', props.updatesReducer.creatorUpdates)
   return {
     creator: props.detailsReducer.eventDetails.creator,
-    // updatedName: props.updatesReducer.creatorUpdates.creator
+    updatedName: props.updatesReducer.creatorUpdates.creator
   }
 }
 
