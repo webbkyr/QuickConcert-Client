@@ -8,7 +8,8 @@ import { sendCreatorUpdate } from '../actions/event-updates';
   constructor(props) {
     super(props)
     this.state = {
-      editor: false
+      editor: false,
+      creator: this.props.creator
     }
   }
 
@@ -40,11 +41,10 @@ import { sendCreatorUpdate } from '../actions/event-updates';
     })
     this.props.dispatch(sendCreatorUpdate(creatorInfo))
     this.setState({
-      editor: !this.state.editor
+      editor: !this.state.editor,
+      creator: this.refs.creator.value
     })
     console.log('Creator Update Value', this.refs.creator.value);
-
-    // window.location.reload();
   }
 
 render() {
@@ -63,13 +63,13 @@ render() {
     </button>
       <button
         type='button'
-        onClick={() => this.toggle()}>Close editor
+        onClick={() => this.toggle()}>Close
       </button>
     </div>
       )
   } else {
       return (
-       <p onClick={() => this.toggle()} id='user-event-creator'>Creator: {this.props.creator} <br/>
+       <p onClick={() => this.toggle()} id='user-event-creator'>Creator: {this.state.creator} <br/>
       </p>
     )
   }
@@ -79,10 +79,10 @@ render() {
 
 //commenting this out until a better fix can be tested
 const mapStateToProps = props => {
-  console.log('UpdatedName in mapd2p', props.updatesReducer.creatorUpdates.creator)
+  // console.log('UpdatedName in mapd2p', props.updatesReducer.creatorUpdates.creator)
   return {
     creator: props.detailsReducer.eventDetails.creator,
-    updatedName: props.updatesReducer.creatorUpdates.creator
+    // updatedName: props.updatesReducer.creatorUpdates.creator
   }
 }
 

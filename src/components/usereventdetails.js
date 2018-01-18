@@ -23,12 +23,12 @@ render() {
   console.log('User event details props', this.props)
 
   let eventName = '';
-  let creator = '';
+  // let creator = '';
   let attendeeList = '';
 
   if (this.props.eventDetails) {
     eventName = this.props.eventDetails.eventName;
-    creator = this.props.eventDetails.creator;
+    // creator = this.props.eventDetails.creator;
     attendeeList = this.props.eventDetails.attendees.map((attendee, index) => {
       return (
         <li id='event-attendees' key={index}>{attendee.attendee}</li>
