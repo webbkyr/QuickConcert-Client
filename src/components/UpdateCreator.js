@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './UpdateCreator.css';
 import { connect } from 'react-redux';
-import ProcessUpdates from './Process-Updates';
+// import ProcessUpdates from './Process-Updates';
 import { sendCreatorUpdate } from '../actions/event-updates';
 
  class UpdateCreator extends React.Component {

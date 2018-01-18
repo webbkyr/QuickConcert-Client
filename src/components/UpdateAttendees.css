@@ -1,0 +1,19 @@
+.attendee-edit {
+  color: white
+}
+
+.attendee-edit-ul {
+  padding: 0;
+}
+
+.attendee-edit-ul > li{
+ list-style-type: none;
+ color: white;
+}
+
+#input-add-attendee {
+  padding: 5px;
+  text-align: center;
+  font-size: 1.3em;
+  border-radius: 5px;
+}

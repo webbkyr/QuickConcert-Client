@@ -15,15 +15,17 @@ export const updatesReducer = (state=initialState, action) => {
   switch(action.type) {
 
     case CREATOR_UPDATE_REQUEST:
-    return Object.assign(state, {}, {loading: true})
+    return Object.assign({}, state, {loading: true})
 
     case CREATOR_UPDATE_SUCCESS:
-    return Object.assign(state, {loading: false,
-      creatorUpdates: [...state.creatorUpdates, {creator: action.data.creator, eventId: action.data._id}
+    return Object.assign({}, state, {loading: false,
+      creatorUpdates: [...state.creatorUpdates, 
+        {creator: action.data.creator, 
+          eventId: action.data._id}
       ]})
 
     case CREATOR_UPDATE_ERROR:
-    return Object.assign(state, {}, {error: action.err})
+    return Object.assign({}, state, {error: action.err})
 
 
     default: 

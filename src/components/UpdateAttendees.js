@@ -1,34 +1,68 @@
-// import React from 'react';
-// import { connect } from 'react-redux';
-// import './usereventdetails-view.css';
-// import { fetchLinkSuccess } from '../actions/eventlinks';
-// // import UserEventDetails from './usereventdetails'
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import './UpdateAttendees.css';
+import { connect } from 'react-redux';
+import { sendAttendeesUpdate } from '../actions/event-updates';
+import {Button} from './Button';
 
-//get the event id from the history prop
+ class UpdateAttendees extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      editor: false,
 
-// // { __v: 0,
-// //   eventName: 'Thrillkiller',
-// //   creator: 'Kim',
-// //   _id: 5a4f7d804db91b62428166ff,
-// //   attendees: [ { attendee: 'Kim', _id: 5a4f7d804db91b6242816700 } ] }
-
-
-// export function GetUserLink(props) {
-
-//     return (    
-//       <div>
-//         <UserEventDetails />
-//         {/* {this.renderDetails} */}
-//       </div>
-//     )
-//   }
-// }
+    }
+  }
 
 
-// export const mapStateToProps = state => {
-//   return {
-//     eventLink: state.eventLink
-//   }
-// }
+  toggle() {
+    this.setState({
+      editor: !this.state.editor
+    })
+  }
 
-// export default connect(mapStateToProps)(GetUserLink)
+
+  render() {  
+    let attendeeView =
+      <ul className='attendees-container'>
+        {this.props.attendeeList}
+      </ul>
+
+    let text = <p>Who's Going?</p>
+    
+
+    if (this.state.editor) {
+      return (
+      <div className='attendee-edit'>
+        {text}
+        {attendeeView}
+        <input id='input-add-attendee' type='text' placeholder='Name' ref='attendee-add' />
+        <Button id='add-attendee-action' buttonText='Add'  />
+        <Button id='cancel-add-attendee' buttonText='Cancel' onClick={() => this.toggle()} />
+      </div>
+      )
+    } else {
+
+      return (
+        <div className='attendee-edit'>
+        {text}
+          {attendeeView}
+          <Button id='attendee-open-editor' buttonText='Add Attendee' onClick={() => this.toggle()} />
+        </div>
+      )
+    }
+  
+  }
+
+ 
+}
+
+const mapStateToProps = state => {
+
+  return {
+    attendees: state.detailsReducer.attendees
+  }
+}
+
+export default connect(mapStateToProps)(UpdateAttendees);
+

@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchEventDetails } from '../actions/event-details';
 import './usereventdetails.css';
 import  UpdateCreator  from './UpdateCreator';
+import UpdateAttendees from './UpdateAttendees';
 
 
 export class UserEventDetails extends React.Component {
@@ -23,12 +24,10 @@ render() {
   console.log('User event details props', this.props)
 
   let eventName = '';
-  // let creator = '';
   let attendeeList = '';
 
   if (this.props.eventDetails) {
     eventName = this.props.eventDetails.eventName;
-    // creator = this.props.eventDetails.creator;
     attendeeList = this.props.eventDetails.attendees.map((attendee, index) => {
       return (
         <li id='event-attendees' key={index}>{attendee.attendee}</li>
@@ -42,7 +41,9 @@ render() {
         <p className='my-event'>My Event</p>
         <p id='user-event-name'>{eventName}</p>
         <UpdateCreator />
-        <ul className='attendees-container'>Current Attendees: {attendeeList}</ul>
+        {/* <UpdateAttendees /> */}
+        <UpdateAttendees attendeeList={attendeeList} />
+        {/* <ul className='attendees-container'>Current Attendees: {attendeeList}</ul> */}
       </div>
     )
   }

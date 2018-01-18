@@ -1,0 +1,25 @@
+.button-main {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  background-color: rgb(52, 139, 238);
+  transition-duration: 0.8s;
+  height: 40px;
+  width: 120px;
+  border-radius: 8px;
+  border: 3px solid black;
+  font-size: 16px;
+}
+
+.button-main:hover {
+  background-color: rgb(114, 187, 236);
+}
+
+#attendee-open-editor {
+  height: 50px;
+  width: 150px;
+}
+
+#add-attendee-action, #cancel-add-attendee {
+  margin-top: 10px;
+}
