@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './UpdateCreator.css';
 import { connect } from 'react-redux';
+import ProcessUpdates from './Process-Updates';
 import { sendCreatorUpdate } from '../actions/event-updates';
 
  class UpdateCreator extends React.Component {
@@ -9,22 +10,13 @@ import { sendCreatorUpdate } from '../actions/event-updates';
     super(props)
     this.state = {
       editor: false,
-      creator: this.props.creator
+      creator: this.props.creator,
+      updatedCreator: null
     }
   }
 
-  //once the store changes, re-render the component to update
-
-// shouldComponentUpdate() {
-//   if (this.state.isUpdated) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-//   //set condition if state.editor changes then return true
-//   //else return false CAN ONLY RETURN A BOOLEAN VALUE
-//   //IF true the component will re-render
-// }
+//using local state for this component because re-rendering is being blocked
+//for creator updates
 
   toggle() {
     this.setState({
@@ -36,18 +28,19 @@ import { sendCreatorUpdate } from '../actions/event-updates';
   handleUpdate(value) {
     const creator = value;
     const creatorInfo = ({
-      id: this.props.match.params.eventId,
+      id: this.props.eventId,
       creator
     })
     this.props.dispatch(sendCreatorUpdate(creatorInfo))
     this.setState({
       editor: !this.state.editor,
-      creator: this.refs.creator.value
+      updatedCreator: this.refs.creator.value
     })
-    console.log('Creator Update Value', this.refs.creator.value);
+
   }
 
 render() {
+  console.log('UpdatedName in state',this.state.updatedCreator)
 
 
   if (this.state.editor) {
@@ -55,7 +48,7 @@ render() {
     <div>
      <p 
       className='editor-creator'>Creator: 
-      <input type='text' defaultValue={this.state.creator} ref="creator" />
+      <input type='text' defaultValue={this.state.updatedCreator ? this.state.updatedCreator : this.props.creator} ref="creator" />
     </p>
      <button 
       type='button' 
@@ -69,21 +62,22 @@ render() {
       )
   } else {
       return (
-       <p onClick={() => this.toggle()} id='user-event-creator'>Creator: {this.state.creator} <br/>
+       <p onClick={() => this.toggle()} id='user-event-creator'>Creator: {this.state.updatedCreator ? this.state.updatedCreator : this.props.creator} <br/>
       </p>
     )
   }
 } 
 }
 
+const mapStateToProps = state => {
 
-//commenting this out until a better fix can be tested
-const mapStateToProps = props => {
-  console.log('UpdatedName in mapd2p', props.updatesReducer.creatorUpdates)
   return {
-    creator: props.detailsReducer.eventDetails.creator,
-    updatedName: props.updatesReducer.creatorUpdates.creator
+    eventId: state.detailsReducer.eventDetails.id,
+    creator: state.detailsReducer.eventDetails.creator,
+    updatedName: state.updatesReducer.creatorUpdates
   }
 }
 
-export default withRouter(connect(mapStateToProps)(UpdateCreator));
+export default connect(mapStateToProps)(UpdateCreator);
+
+//removed withRouter from this component
