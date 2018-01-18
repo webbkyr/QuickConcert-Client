@@ -55,12 +55,10 @@ export class ConcertApp extends React.Component {
       }     
 }
 
-const mapStateToProps = function(state){
+const mapStateToProps = state => {
     return {
-        concerts: state.concerts || [],
-        loading: state.loading,
-        error: state.error,
-        isModalOpen: state.isModalOpen
+        loading: state.concertsReducer.loading,
+        error: state.concertsReducer.error,
     }
 }
 
