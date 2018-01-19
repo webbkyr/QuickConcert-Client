@@ -1,5 +1,6 @@
-
-
+<p align='center'>
+    <img width='600' height='450'src='https://i.imgur.com/wMKispW.png'>	
+</p>
 ## purpose
 
 An event driven platform in which users can search for concerts in a specified city (concert results are for the day of, up until the next day of your search). Users are able to buy tickets and 'share' the event with their friends via a unique url that is generated on the backend. 
