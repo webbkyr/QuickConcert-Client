@@ -1,13 +1,17 @@
 .attendee-edit {
-  color: white
+  color: white;
+  transition: all 2s ease;
+
+  /* transition-timing-function: ease; */
 }
 
 .attendee-edit-ul {
   padding: 0;
 }
 
-.attendee-edit-ul > li{
- list-style-type: none;
+.attendee-edit-ol > li{
+ /* list-style-type: none; */
+ list-style-type: decimal;
  color: white;
 }
 
@@ -16,4 +20,19 @@
   text-align: center;
   font-size: 1.3em;
   border-radius: 5px;
+  /* transition-duration: 0.25s; */
+}
+
+/* #input-add-attendee, #cancel-add-attendee {
+  transition-timing-function: ease;
+  transition: 0.8s;
+} */
+
+.attendee-transition-enter {
+  opacity: 0.01;
+}
+
+.attendee-transition-leave {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
 }

@@ -1,9 +1,10 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import './UpdateAttendees.css';
 import { connect } from 'react-redux';
-import { sendAttendeesUpdate } from '../actions/event-updates';
-import {Button} from './Button';
+// import { sendAttendeesUpdate } from '../actions/event-updates';
+// import { TransitionGroup } from 'react-transition-group';
+import { Button } from './Button';
 
  class UpdateAttendees extends React.Component {
   constructor(props) {
@@ -24,9 +25,9 @@ import {Button} from './Button';
 
   render() {  
     let attendeeView =
-      <ul className='attendees-container'>
+      <ol className='attendees-container'>
         {this.props.attendeeList}
-      </ul>
+      </ol>
 
     let text = <p>Who's Going?</p>
     
@@ -36,9 +37,9 @@ import {Button} from './Button';
       <div className='attendee-edit'>
         {text}
         {attendeeView}
-        <input id='input-add-attendee' type='text' placeholder='Name' ref='attendee-add' />
-        <Button id='add-attendee-action' buttonText='Add'  />
-        <Button id='cancel-add-attendee' buttonText='Cancel' onClick={() => this.toggle()} />
+          <input key='input' id='input-add-attendee' type='text' placeholder='Name' ref='attendee-add' />
+          <Button key='button1' id='add-attendee-action' buttonText='Add' onClick={() => console.log('handle sending the additional attendees to the database')} />
+          <Button key='button2' id='cancel-add-attendee' buttonText='Cancel' onClick={() => this.toggle()}/>
       </div>
       )
     } else {
