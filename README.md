@@ -1,5 +1,7 @@
 # quick concert 
-(quickconcert-screenshot.png)
+<p align='center'>
+  <img width='600' height='400'src='./quickconcert-screenshot.png'>
+</p>
 
 ## purpose
 
@@ -53,8 +55,11 @@ An event driven platform in which users can search for concerts in a specified c
 
 ## want to contribute?
 
-Install the dependencies
+Install the Node and npm, clone/fork the repo and run the following command in your project folder to install the dependencies
     
     npm install
+
+## acknowledgements
+Special shouts to stackoverflow and the open source community
 
 Happy coding!
