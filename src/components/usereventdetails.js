@@ -21,7 +21,7 @@ export class UserEventDetails extends React.Component {
 
 render() {
 
-  console.log('User event details props', this.props)
+  // console.log('User event details props', this.props)
 
   let eventName = '';
   let attendeeList = '';
@@ -41,9 +41,7 @@ render() {
         <p className='my-event'>My Event</p>
         <p id='user-event-name'>{eventName}</p>
         <UpdateCreator />
-        {/* <UpdateAttendees /> */}
         <UpdateAttendees attendeeList={attendeeList} />
-        {/* <ul className='attendees-container'>Current Attendees: {attendeeList}</ul> */}
       </div>
     )
   }
@@ -59,4 +57,3 @@ const mapStateToProps = (state, props) => {
 
 export default withRouter(connect(mapStateToProps)(UserEventDetails));
 
-//remove the name prop that is being passed to UpdateCreator

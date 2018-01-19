@@ -19,7 +19,7 @@ export class UserLocation extends React.Component {
       <div className='user-input-container'>
         <h2 id='location-question'>Where is your closest city?</h2>
         <form 
-        id='search-form'
+        className='input-form'
         onSubmit={
           this.handleSubmit.bind(this)}>
         <input 

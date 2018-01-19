@@ -25,7 +25,7 @@ export const fetchLinkError = function(err) {
 }
 
 export const fetchSharedLink = function(concertInfo) {
-    console.log(concertInfo)
+    // console.log(concertInfo)
   return function(dispatch) {
       dispatch(fetchLinkRequest());
       return fetch(`${API_BASE_URL}/api/concerts`, {
@@ -39,7 +39,7 @@ export const fetchSharedLink = function(concertInfo) {
           }
           return res.json();
       }).then(event => {
-          console.log(event)
+        //   console.log(event)
           dispatch(fetchLinkSuccess(event));
       }).catch(err => {
           dispatch(fetchLinkError(err))

@@ -39,7 +39,7 @@ export const fetchEventDetails = function(id) {
           }
           return res.json();
       }).then(details => {
-          console.log(details)
+        //   console.log(details)
           dispatch(fetchDetailsSuccess(details));
       }).catch(err => {
           dispatch(fetchDetailsError(err))

@@ -1,9 +1,10 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom';
-import './UpdateCreator.css';
 import { connect } from 'react-redux';
-// import ProcessUpdates from './Process-Updates';
 import { sendCreatorUpdate } from '../actions/event-updates';
+import { Button } from './Button';
+
+import './UpdateCreator.css';
+
 
  class UpdateCreator extends React.Component {
   constructor(props) {
@@ -40,29 +41,34 @@ import { sendCreatorUpdate } from '../actions/event-updates';
   }
 
 render() {
-  console.log('UpdatedName in state',this.state.updatedCreator)
+  // console.log('UpdatedName in state',this.state.updatedCreator)
 
 
   if (this.state.editor) {
     return (
-    <div>
-     <p 
-      className='editor-creator'>Creator: 
-      <input type='text' defaultValue={this.state.updatedCreator ? this.state.updatedCreator : this.props.creator} ref="creator" />
-    </p>
-     <button 
-      type='button' 
-      onClick={() => this.handleUpdate(this.refs.creator.value)}>Submit
-    </button>
-      <button
-        type='button'
-        onClick={() => this.toggle()}>Close
-      </button>
-    </div>
-      )
+      <div>
+        <p className='editor-creator'>Creator: 
+          <input className='input-form' 
+            type='text' 
+            defaultValue={this.state.updatedCreator ? this.state.updatedCreator : this.props.creator} 
+            ref="creator" /> 
+        </p>
+        <span>(click to edit)</span>
+        <Button 
+          id='submit-creator-u' 
+          buttonText='Submit' 
+          onClick={() => this.handleUpdate(this.refs.creator.value)} />
+        <Button 
+          id='close-creator-b' 
+          buttonText='Close' 
+          onClick={() => this.toggle()} />
+      </div>
+    )
   } else {
       return (
-       <p onClick={() => this.toggle()} id='user-event-creator'>Creator: {this.state.updatedCreator ? this.state.updatedCreator : this.props.creator} <br/>
+       <p 
+        onClick={() => this.toggle()} 
+        id='user-event-creator'>Creator: {this.state.updatedCreator ? this.state.updatedCreator : this.props.creator} 
       </p>
     )
   }
@@ -80,4 +86,3 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps)(UpdateCreator);
 
-//removed withRouter from this component

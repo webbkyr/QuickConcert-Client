@@ -6,7 +6,7 @@
 
 An event driven platform in which users can search for concerts in a specified city (concert results are for the day of, up until the next day of your search). Users are able to buy tickets and 'share' the event with their friends via a unique url that is generated on the backend. 
 
-[LIVE Demo](http://sad-goldstine-40377d.netlify.com)
+[LIVE Demo](http://quickconcert.netlify.com/)
 
 
 ## tech stack
@@ -16,7 +16,7 @@ An event driven platform in which users can search for concerts in a specified c
 * MongoDB/Mongoose
 
 ## api
-* [Ticketmaster] (https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
+* [Ticketmaster](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
 * quick concert [server](https://github.com/webbkyr/QuickConcert-Server)
 
 ### Long Version
@@ -35,7 +35,8 @@ Server supports the following:
 * PUT the organizer of the shareable events
 
 TODO: 
-*update and delete attendees of those shareable events
+
+* Update and delete attendees of those shareable events
 
 ## client side folder structure
 
@@ -77,6 +78,6 @@ Install Node and npm, clone/fork the repo and run the following command in your 
     npm install
 
 ## acknowledgements
-Special shouts to stackoverflow and the open source community
+Special shouts to stackoverflow and the open source community.
 
 Happy coding!

@@ -1,3 +1,7 @@
 .editor-creator {
   color: white;
 }
+
+#submit-creator-u, #close-creator-b {
+  margin-top: 10px;
+}

@@ -1,10 +1,10 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom';
 import './UpdateAttendees.css';
 import { connect } from 'react-redux';
-// import { sendAttendeesUpdate } from '../actions/event-updates';
-// import { TransitionGroup } from 'react-transition-group';
+
 import { Button } from './Button';
+
+//this feature is not implemented
 
  class UpdateAttendees extends React.Component {
   constructor(props) {
