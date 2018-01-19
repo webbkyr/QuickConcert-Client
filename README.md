@@ -1,6 +1,6 @@
 # quick concert 
 <p align='center'>
-  <img width='600' height='400'src='./quickconcert-screenshot.png'>
+  <img width='600' height='400'src='https://imgur.com/a/qeLXO'>
 </p>
 
 ## purpose
