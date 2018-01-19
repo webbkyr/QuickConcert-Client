@@ -1,6 +1,7 @@
 <p align='center'>
     <img width='600' height='450'src='https://i.imgur.com/wMKispW.png'>	
 </p>
+
 ## purpose
 
 An event driven platform in which users can search for concerts in a specified city (concert results are for the day of, up until the next day of your search). Users are able to buy tickets and 'share' the event with their friends via a unique url that is generated on the backend. 
@@ -18,12 +19,14 @@ An event driven platform in which users can search for concerts in a specified c
 * [Ticketmaster] (https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
 * quick concert [server](https://github.com/webbkyr/QuickConcert-Server)
 
-###Long Version
+### Long Version
+
 Our API uses a proxy of api/concerts to make the call to Ticketmaster on the server. We append a query string on the front end to the base url for the FETCH request that contains the user's location. So, the server receives the following:
 
     api/concerts?city=${location}
 
-###TL;DR
+
+### TL;DR
 Server supports the following: 
 
 * GET concerts via our proxy to Ticketmaster. 

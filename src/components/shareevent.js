@@ -26,7 +26,7 @@ handleSelectedConcert() {
     return
   } else {
     return <div>
-          <p>Event Title: {this.props.selectedConcert.name} <br/>
+          <p id='share-link-p'>Event Title: {this.props.selectedConcert.name} <br/>
           Date: {this.props.selectedConcert.dates.start.localDate} <br/>
           Time: {this.props.selectedConcert.dates.start.localTime} 
           </p>
