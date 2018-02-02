@@ -15,6 +15,8 @@ const rootReducer = combineReducers({
   updatesReducer
 })
 
+//add index js in reducers folder and use that to do combinereducers
+
 const enhancer = composeWithDevTools(applyMiddleware(thunk));
 
 export default createStore(rootReducer, enhancer);

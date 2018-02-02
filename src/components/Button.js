@@ -1,8 +1,7 @@
 import React from 'react';
 import './Button.css'
 
-export function Button(props) {
-  // console.log('Button props', props)
+function Button(props) {
 
   if (props.onClick) {
     return (
@@ -15,3 +14,5 @@ export function Button(props) {
   }
 
 }
+//it would then be import without curly braces for this way
+export default Button;

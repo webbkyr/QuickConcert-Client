@@ -4,9 +4,8 @@ export const FETCH_CONCERT_SUCCESS = 'FETCH CONCERT SUCCESS';
 export const FETCH_CONCERT_ERROR = 'FETCH CONCERT ERROR';
 export const CONCERT_SELECTED = 'CONCERT SELECTED';
 
-
 // sync actions 
-
+//make ES6 consistent
 export const fetchConcertRequest = function(){
     return {
         type: FETCH_CONCERT_REQUEST
@@ -34,8 +33,6 @@ export const selectConcert = function(concert){
         type: CONCERT_SELECTED, payload: concert
     }
 }
-
-
 
 //async action
 

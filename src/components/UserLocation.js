@@ -6,14 +6,12 @@ import './UserLocation.css';
 
 
 export class UserLocation extends React.Component {
-
   handleSubmit(e) {
     e.preventDefault();
     const value = this.input.value.toLowerCase();
     this.props.dispatch(fetchConcerts(value, this.props.history));
   
   }
-  
   render() {
     return (
       <div className='user-input-container'>
@@ -29,12 +27,7 @@ export class UserLocation extends React.Component {
           ref={input => this.input = input}
           required 
           placeholder='Atlanta'/>
-        <button 
-          type='submit' 
-          name='Search' 
-          id='searchButton' 
-          className='searchButton'>
-          Search</button>
+        <button type='submit' name='Search' id='searchButton' className='searchButton'>Search</button>
       </form>
     </div>
     )

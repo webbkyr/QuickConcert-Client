@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router'
@@ -9,26 +9,19 @@ import Home from './Home';
 import AboutPage from './AboutPage';
 import Header from './Header';
 import UserEventDetails from './usereventdetails';
-
 import './ConcertApp.css';
 
-
-export class ConcertApp extends React.Component {
-
-
+export class ConcertApp extends Component {
   renderData(){
 
     if (this.props.loading) {
       return <Spinner id='spinner' name="line-scale-pulse-out" color="red" fadeIn='none'/>
-
         }
     if (this.props.error) {
        return <p>{this.props.error}</p>
           }        
         }
-
     render() {
-      
       return (
         <div>
           <Header />
@@ -42,7 +35,6 @@ export class ConcertApp extends React.Component {
           {this.renderData()}
       </div>
           )
-      
       }     
 }
 

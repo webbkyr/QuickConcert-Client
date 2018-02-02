@@ -1,13 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
-
 import './AboutPage.css';
 
-export function AboutPage(props) {
-
+export function AboutPage() {
   return (
     <section id="about" tabIndex="-1">
- 
       <h2>What is this?</h2>
       <p>This is a social event platform.</p>
       <p>
@@ -22,4 +18,4 @@ export function AboutPage(props) {
   );
 }
 
-export default connect()(AboutPage)
+export default AboutPage

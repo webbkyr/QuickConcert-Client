@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import ShareEvent from './shareevent';
-import { Button } from './Button';
+import  Button  from './Button';
 import { selectConcert } from '../actions/concerts';
 import { showModal } from '../actions/modal';
 import { withRouter } from 'react-router-dom'

@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { sendCreatorUpdate } from '../actions/event-updates';
-import { Button } from './Button';
-
+import  Button  from './Button';
 import './UpdateCreator.css';
-
 
  class UpdateCreator extends React.Component {
   constructor(props) {
@@ -16,16 +14,11 @@ import './UpdateCreator.css';
     }
   }
 
-//using local state for this component because re-rendering is being blocked
-//for creator updates
-
   toggle() {
     this.setState({
       editor: !this.state.editor
     })
   }
-
-
   handleUpdate(value) {
     const creator = value;
     const creatorInfo = ({
@@ -41,9 +34,6 @@ import './UpdateCreator.css';
   }
 
 render() {
-  // console.log('UpdatedName in state',this.state.updatedCreator)
-
-
   if (this.state.editor) {
     return (
       <div>
@@ -74,9 +64,8 @@ render() {
   }
 } 
 }
-
+//update to immediately return object
 const mapStateToProps = state => {
-
   return {
     eventId: state.detailsReducer.eventDetails.id,
     creator: state.detailsReducer.eventDetails.creator,

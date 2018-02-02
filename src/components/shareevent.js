@@ -2,23 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchSharedLink } from '../actions/eventlinks'
 import { hideModal } from '../actions/modal';
-import './modal.css';
 import EventConfirmation from './EventConfirmation';
-import { Button } from './Button';
-
+import Button from './Button';
+import './modal.css';
 
 export class ShareEvent extends React.Component {
-
   handleCreateEvent(e, concert) {
     e.preventDefault();
     const name = this.input.value;
-    
     const concertInfo = ({
       eventName: concert, 
       creator: name,
       attendee: name
     })
-
     this.props.dispatch(fetchSharedLink(concertInfo));
   }
 
@@ -26,15 +22,16 @@ export class ShareEvent extends React.Component {
     if (this.props.selectedConcert === null) {
       return
     } else {
-      return <div>
+      return (
+        <div>
             <p id='share-link-p'>Event Title: {this.props.selectedConcert.name} <br/>
             Date: {this.props.selectedConcert.dates.start.localDate} <br/>
             Time: {this.props.selectedConcert.dates.start.localTime} 
             </p>
-            </div>
+        </div>
+        )
+      }
     }
-  }
-
 
   render() {
     return (    
@@ -43,28 +40,20 @@ export class ShareEvent extends React.Component {
             <h1>Share this Concert</h1>
             <div>{this.handleSelectedConcert()}
           </div>
-
           <form onSubmit={(e) => this.handleCreateEvent(e, this.props.selectedConcert.name)}>
             <input className='modal-input'
-          type='text'  
+            type='text'  
             ref={input => this.input = input}
             required
             placeholder='Your Name'/>
-    
             {this.props.eventLink !=null ? <EventConfirmation /> : null}
-
             <Button className='closeModal' buttonText='Close' onClick={() => this.props.dispatch(hideModal())} />
-            <button 
-            type='submit'
-            name='createEvent'
-            className='createEvent'>
-            Create Event</button>
+            <button type='submit' name='createEvent'className='createEvent'>Create Event</button>
           </form>
         </div>
       </div>
     )
-}
-
+  }
 }
 
 export const mapStateToProps = state => {

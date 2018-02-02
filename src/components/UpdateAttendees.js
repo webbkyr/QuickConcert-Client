@@ -1,27 +1,22 @@
 import React from 'react';
-import './UpdateAttendees.css';
 import { connect } from 'react-redux';
+import Button from './Button';
+import './UpdateAttendees.css';
 
-import { Button } from './Button';
-
-//this feature is not implemented
 
  class UpdateAttendees extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       editor: false,
-
     }
   }
-
 
   toggle() {
     this.setState({
       editor: !this.state.editor
     })
   }
-
 
   render() {  
     let attendeeView =
@@ -31,7 +26,6 @@ import { Button } from './Button';
 
     let text = <p>Who's Going?</p>
     
-
     if (this.state.editor) {
       return (
       <div className='attendee-edit'>
@@ -43,7 +37,6 @@ import { Button } from './Button';
       </div>
       )
     } else {
-
       return (
         <div className='attendee-edit'>
         {text}
@@ -52,18 +45,12 @@ import { Button } from './Button';
         </div>
       )
     }
-  
   }
-
- 
 }
 
-const mapStateToProps = state => {
-
-  return {
+const mapStateToProps = state => ({
     attendees: state.detailsReducer.attendees
-  }
-}
+})
 
 export default connect(mapStateToProps)(UpdateAttendees);
 

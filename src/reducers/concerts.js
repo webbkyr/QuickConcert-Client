@@ -1,4 +1,4 @@
-import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, CONCERT_SELECTED } from '../actions/concerts';
+import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, CONCERT_SELECTED, selectConcert } from '../actions/concerts';
 
 
 const initialState = {
@@ -13,6 +13,11 @@ export const concertsReducer = (state=initialState, action) => {
 
     case CONCERT_SELECTED:
     return Object.assign({}, state, {selectedConcert: action.payload})
+    //return {
+      //less code to use spread operator
+    //   ...state, 
+    //   selectConcert: action.payload;
+    // }
 
     case FETCH_CONCERT_REQUEST:
     return Object.assign({}, state, {loading: true})

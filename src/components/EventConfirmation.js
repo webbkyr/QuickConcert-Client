@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './EventConfirmation.css';
 
-
 export function EventConfirmation(props) {
-
   return (
     <div>
       <p>Share this link with your friends to add attendees! <br/>
@@ -13,7 +11,6 @@ export function EventConfirmation(props) {
       </p>
     </div>
     ) 
-  
 }
 
 export const mapStateToProps = (state, props) => {
@@ -21,7 +18,5 @@ export const mapStateToProps = (state, props) => {
     eventLink: state.eventLinkReducer.eventLink
   }
 }
-
-
 
 export default connect(mapStateToProps)(EventConfirmation)
