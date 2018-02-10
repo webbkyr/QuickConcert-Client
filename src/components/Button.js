@@ -1,7 +1,7 @@
 import React from 'react';
 import './Button.css'
 
-function Button(props) {
+export default function Button(props) {
 
   if (props.onClick) {
     return (
@@ -13,5 +13,3 @@ function Button(props) {
     )
   }
 }
-
-export default Button;

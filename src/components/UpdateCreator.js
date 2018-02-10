@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sendCreatorUpdate } from '../actions/event-updates';
 import  Button  from './Button';
 import './UpdateCreator.css';
 
- class UpdateCreator extends React.Component {
+ class UpdateCreator extends Component {
   constructor(props) {
     super(props)
     this.state = {

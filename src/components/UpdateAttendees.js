@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from './Button';
 import './UpdateAttendees.css';
 
-
- class UpdateAttendees extends React.Component {
+ class UpdateAttendees extends Component {
   constructor(props) {
     super(props)
     this.state = {

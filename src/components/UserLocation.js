@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import { fetchConcerts } from '../actions/concerts';
 import './UserLocation.css';
 
 
-export class UserLocation extends React.Component {
+export class UserLocation extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const value = this.input.value.toLowerCase();

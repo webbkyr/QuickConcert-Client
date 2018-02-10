@@ -7,22 +7,22 @@ export default function Header() {
   <header>
     <nav>
       <ul className='nav-list-section'>
-      <li className='home-link'>
+       <li className='home-link'>
           <Link to='/'>
             Home
           </Link>
-        </li>
-        <li className='about-link'>
+      </li>
+      <li className='about-link'>
           <Link to='/about'>
             About 
           </Link>
-        </li>
-        <li className='search-link'>
+      </li>
+      <li className='search-link'>
           <Link to='/search'>
             Search
           </Link>
-        </li>
-      </ul>
+      </li>
+    </ul>
     </nav>
   </header>
   )

@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutPage.css';
 
-export function AboutPage() {
+export default function AboutPage() {
   return (
     <section id="about" tabIndex="-1">
       <h2>What is this?</h2>
@@ -17,5 +17,3 @@ export function AboutPage() {
     </section>
   );
 }
-
-export default AboutPage

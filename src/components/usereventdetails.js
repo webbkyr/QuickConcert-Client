@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
 import { fetchEventDetails } from '../actions/event-details';
-import  UpdateCreator  from './UpdateCreator';
+import UpdateCreator from './UpdateCreator';
 import UpdateAttendees from './UpdateAttendees';
 import './usereventdetails.css';
 
-export class UserEventDetails extends React.Component {
+export class UserEventDetails extends Component {
   componentDidMount() {
     if (this.props.eventId) {
     this.props.dispatch(fetchEventDetails(this.props.eventId))

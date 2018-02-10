@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSharedLink } from '../actions/eventlinks'
 import { hideModal } from '../actions/modal';
@@ -6,7 +6,7 @@ import EventConfirmation from './EventConfirmation';
 import Button from './Button';
 import './modal.css';
 
-export class ShareEvent extends React.Component {
+export class ShareEvent extends Component {
   handleCreateEvent(e, concert) {
     e.preventDefault();
     const name = this.input.value;

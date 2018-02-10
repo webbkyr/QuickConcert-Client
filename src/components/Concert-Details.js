@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import ShareEvent from './shareevent';
-import  Button  from './Button';
 import { selectConcert } from '../actions/concerts';
 import { showModal } from '../actions/modal';
 import { withRouter } from 'react-router-dom'
-
+import ShareEvent from './shareevent';
+import Button from './Button';
+import HandleNoConcerts from './NoConcerts';
 import './Concert-Details.css';
-import  HandleNoConcerts  from './NoConcerts';
 
 export function ConcertDetails(props) {
 

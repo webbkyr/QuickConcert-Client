@@ -12,8 +12,8 @@ import UserEventDetails from './usereventdetails';
 import './ConcertApp.css';
 
 export class ConcertApp extends Component {
-  renderData(){
 
+  renderData(){
     if (this.props.loading) {
       return <Spinner id='spinner' name="line-scale-pulse-out" color="red" fadeIn='none'/>
         }
@@ -21,21 +21,21 @@ export class ConcertApp extends Component {
        return <p>{this.props.error}</p>
           }        
         }
-    render() {
-      return (
-        <div>
-          <Header />
-            <Switch>
-              <Route exact path='/' component={Home}/>
-              <Route exact path='/about' component={AboutPage} />
-              <Route exact path='/search' component={UserLocation} />
-              <Route exact path='/search/concerts' component={ConcertDetails}/>
-              <Route exact path='/event/:eventId' component={UserEventDetails} />
-            </Switch>
+
+  render() {
+    return (
+      <div>
+        <Header />
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/about' component={AboutPage} />
+            <Route exact path='/search' component={UserLocation} />
+            <Route exact path='/search/concerts' component={ConcertDetails}/>          <Route exact path='/event/:eventId' component={UserEventDetails} />
+          </Switch>
           {this.renderData()}
-      </div>
-          )
-      }     
+    </div>
+        )
+    }     
 }
 
 const mapStateToProps = state => ({
