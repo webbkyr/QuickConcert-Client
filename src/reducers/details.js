@@ -1,4 +1,4 @@
-import { FETCH_DETAILS_REQUEST, FETCH_DETAILS_SUCCESS, FETCH_DETAILS_ERROR } from '../actions/event-details';
+import { FETCH_DETAILS_REQUEST, FETCH_DETAILS_SUCCESS, FETCH_DETAILS_ERROR } from '../actions';
 
 const initialState = {
   eventDetails: null,

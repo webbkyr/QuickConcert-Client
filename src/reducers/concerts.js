@@ -1,4 +1,4 @@
-import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, CONCERT_SELECTED, selectConcert } from '../actions/concerts';
+import { FETCH_CONCERT_REQUEST, FETCH_CONCERT_SUCCESS, FETCH_CONCERT_ERROR, CONCERT_SELECTED, selectConcert } from '../actions';
 
 
 const initialState = {

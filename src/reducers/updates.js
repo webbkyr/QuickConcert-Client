@@ -9,7 +9,6 @@ const initialState = {
  }
 
  //evaluate creator update fix 
-
 export const updatesReducer = (state=initialState, action) => {
   
   switch(action.type) {
@@ -26,7 +25,6 @@ export const updatesReducer = (state=initialState, action) => {
 
     case CREATOR_UPDATE_ERROR:
     return Object.assign({}, state, {error: action.err})
-
 
     default: 
     break;
