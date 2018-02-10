@@ -12,7 +12,6 @@ function Button(props) {
       <button className={props.className ? props.className : 'button-main'} id={props.id}>{props.buttonText}</button>
     )
   }
-
 }
 
 export default Button;
