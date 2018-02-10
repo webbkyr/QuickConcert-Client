@@ -38,11 +38,9 @@ export class ConcertApp extends Component {
       }     
 }
 
-const mapStateToProps = state => {
-    return {
+const mapStateToProps = state => ({
         loading: state.concertsReducer.loading,
         error: state.concertsReducer.error,
-    }
-}
+})
 
 export default withRouter(connect(mapStateToProps)(ConcertApp))

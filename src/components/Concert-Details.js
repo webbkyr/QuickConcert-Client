@@ -58,10 +58,8 @@ export function ConcertDetails(props) {
   )
 }
 
-const mapStateToProps = state => {
-  return {
+const mapStateToProps = state => ({
     concerts: state.concertsReducer.concerts,
-  }
-}
+})
 
 export default withRouter(connect(mapStateToProps)(ConcertDetails))

@@ -64,14 +64,12 @@ render() {
   }
 } 
 }
-//update to immediately return object
-const mapStateToProps = state => {
-  return {
+
+const mapStateToProps = state => ({
     eventId: state.detailsReducer.eventDetails.id,
     creator: state.detailsReducer.eventDetails.creator,
     updatedName: state.updatesReducer.creatorUpdates
-  }
-}
+})
 
 export default connect(mapStateToProps)(UpdateCreator);
 

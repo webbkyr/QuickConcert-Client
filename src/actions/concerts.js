@@ -6,11 +6,9 @@ export const CONCERT_SELECTED = 'CONCERT SELECTED';
 
 // sync actions 
 //make ES6 consistent
-export const fetchConcertRequest = function(){
-    return {
+export const fetchConcertRequest = () => ({
         type: FETCH_CONCERT_REQUEST
-    }
-}
+})
 
 export const fetchConcertSuccess = function(data, history){
     history.push('/search/concerts')
@@ -35,6 +33,7 @@ export const selectConcert = function(concert){
 }
 
 //async action
+//convert to es6
 
 export const fetchConcerts = function(location, history){
 
