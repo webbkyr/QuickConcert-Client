@@ -14,5 +14,5 @@ function Button(props) {
   }
 
 }
-//it would then be import without curly braces for this way
+
 export default Button;

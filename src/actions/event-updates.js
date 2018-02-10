@@ -3,33 +3,24 @@ export const CREATOR_UPDATE_REQUEST = 'CREATOR UPDATE REQUEST';
 export const CREATOR_UPDATE_SUCCESS = 'CREATOR UPDATE SUCCESS';
 export const CREATOR_UPDATE_ERROR = 'CREATOR UPDATE ERROR';
 
-export const creatorUpdateRequest = function() {
-  return {
+export const creatorUpdateRequest = () => ({
       type: CREATOR_UPDATE_REQUEST
-  }
-}
+})
 
-export const creatorUpdateSuccess = function(data) {
-  return {
+export const creatorUpdateSuccess = data => ({
       type: CREATOR_UPDATE_SUCCESS,
       data
+})
 
-  }
-}
-
-export const creatorUpdateError = function(err) {
-  return {
+export const creatorUpdateError = err => ({
       type: CREATOR_UPDATE_ERROR,
       err
-  }
-}
+})
 
 //change to sendupdates
 
-export const sendCreatorUpdate = function(creatorInfo) {
-
-    return function(dispatch) {
-      dispatch(creatorUpdateRequest());
+export const sendCreatorUpdate = creatorInfo => dispatch => {
+    dispatch(creatorUpdateRequest());
       return fetch(`${API_BASE_URL}/api/concerts/${creatorInfo.id}`, {
           method: 'PUT',
           body: JSON.stringify(creatorInfo),
@@ -45,5 +36,4 @@ export const sendCreatorUpdate = function(creatorInfo) {
       }).catch(err => {
           dispatch(creatorUpdateError(err))
       })
-  }
 }

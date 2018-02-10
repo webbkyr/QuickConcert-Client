@@ -3,46 +3,33 @@ export const FETCH_DETAILS_REQUEST = 'FETCH DETAILS REQUEST';
 export const FETCH_DETAILS_SUCCESS = 'FETCH DETAILS SUCCESS';
 export const FETCH_DETAILS_ERROR = 'FETCH DETAILS ERROR';
 
-export const fetchDetailsRequest = function() {
-  return {
+export const fetchDetailsRequest = () => ({
       type: FETCH_DETAILS_REQUEST
-  }
-}
+})
 
-export const fetchDetailsSuccess = function(data) {
-  return {
+export const fetchDetailsSuccess = data => ({
       type: FETCH_DETAILS_SUCCESS,
       data
+})
 
-  }
-}
-
-export const fetchDetailsError = function(err) {
-  return {
+export const fetchDetailsError = err => ({
       type: FETCH_DETAILS_ERROR,
       err
-  }
-}
+})
 
-
-
-export const fetchEventDetails = function(id) {
-
-    return function(dispatch) {
-      dispatch(fetchDetailsRequest());
+export const fetchEventDetails = id => dispatch =>  {
+    dispatch(fetchDetailsRequest());
       return fetch(`${API_BASE_URL}/api/concerts/${id}`, {
-          method: 'GET',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        method: 'GET',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       }).then(res => {
           if (!res.ok) {
               return Promise.reject(res.statusText);
           }
           return res.json();
       }).then(details => {
-        //   console.log(details)
           dispatch(fetchDetailsSuccess(details));
       }).catch(err => {
           dispatch(fetchDetailsError(err))
       })
-  }
 }

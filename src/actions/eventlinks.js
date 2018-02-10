@@ -24,15 +24,12 @@ export const fetchLinkError = function(err) {
   }
 }
 
-export const fetchSharedLink = function(concertInfo) {
-    // console.log(concertInfo)
-  return function(dispatch) {
+export const fetchSharedLink = concertInfo => dispatch => {
       dispatch(fetchLinkRequest());
       return fetch(`${API_BASE_URL}/api/concerts`, {
-          method: 'POST',
-          body: JSON.stringify(concertInfo),
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-
+        method: 'POST',
+        body: JSON.stringify(concertInfo),
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       }).then(res => {
           if (!res.ok) {
               return Promise.reject(res.statusText);
@@ -44,5 +41,4 @@ export const fetchSharedLink = function(concertInfo) {
       }).catch(err => {
           dispatch(fetchLinkError(err))
       })
-  }
 }
