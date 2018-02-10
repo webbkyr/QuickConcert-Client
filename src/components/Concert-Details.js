@@ -21,7 +21,6 @@ export function ConcertDetails(props) {
 
   const list = props.concerts.map(concert => {
     const concertGenre = concert.classifications[0].genre.name;
-    const url = concert.url;
     
     return (
       <li className='tkmConcertList' key={concert.id}>
