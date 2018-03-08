@@ -8,10 +8,16 @@ import './modal.css';
 
 export class ShareEvent extends Component {
   handleCreateEvent(e, concert) {
+    console.log('HANDLE EVENT CONCERT', concert)
     e.preventDefault();
     const name = this.input.value;
     const concertInfo = ({
-      eventName: concert, 
+      eventName: concert.name, 
+      eventDetails: [{
+       concertDate: concert.dates.start.localDate,
+       concertTime: concert.dates.start.localTime,
+       concertURL: concert.url
+      }],
       creator: name,
       attendee: name
     })
@@ -19,6 +25,7 @@ export class ShareEvent extends Component {
   }
 
   handleSelectedConcert() {
+    console.log(this.props.selectedConcert)
     if (this.props.selectedConcert === null) {
       return
     } else {
@@ -40,7 +47,7 @@ export class ShareEvent extends Component {
             <h1>Share this Concert</h1>
             <div>{this.handleSelectedConcert()}
           </div>
-          <form onSubmit={(e) => this.handleCreateEvent(e, this.props.selectedConcert.name)}>
+          <form onSubmit={(e) => this.handleCreateEvent(e, this.props.selectedConcert)}>
             <input className='modal-input'
             type='text'  
             ref={input => this.input = input}

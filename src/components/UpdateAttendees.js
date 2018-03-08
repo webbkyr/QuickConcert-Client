@@ -23,7 +23,7 @@ import './UpdateAttendees.css';
         {this.props.attendeeList}
       </ol>
 
-    let text = <p>Who's Going?</p>
+    let text = <p id='attendee-label'>Attendees</p>
     
     if (this.state.editor) {
       return (

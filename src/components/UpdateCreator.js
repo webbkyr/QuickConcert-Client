@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sendCreatorUpdate } from '../actions/event-updates';
 import  Button  from './Button';
+import FontAwesome from 'react-fontawesome';
 import './UpdateCreator.css';
 
  class UpdateCreator extends Component {
@@ -37,13 +38,12 @@ render() {
   if (this.state.editor) {
     return (
       <div>
-        <p className='editor-creator'>Creator: 
+        <p className='editor-creator'>Event Organizer 
           <input className='input-form' 
             type='text' 
             defaultValue={this.state.updatedCreator ? this.state.updatedCreator : this.props.creator} 
             ref="creator" /> 
         </p>
-        <span>(click to edit)</span>
         <Button 
           id='submit-creator-u' 
           buttonText='Submit' 
@@ -56,10 +56,13 @@ render() {
     )
   } else {
       return (
-       <p 
-        onClick={() => this.toggle()} 
-        id='user-event-creator'>Creator: {this.state.updatedCreator ? this.state.updatedCreator : this.props.creator} 
-      </p>
+      <section id='user-event-creator'>
+        Event Organizer
+        <span> <a onClick={() => this.toggle()} ><FontAwesome name='fas fa-edit' /></a></span>
+        <p 
+          id='user-event-creator-name'>{this.state.updatedCreator ? this.state.updatedCreator : this.props.creator} 
+        </p>
+      </section>
     )
   }
 } 

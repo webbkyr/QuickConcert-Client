@@ -15,12 +15,32 @@
   width: 60%;
   margin: 0 auto;
   padding-bottom: 5px;
-  font-size: 24px;
+  font-size: 36px;
   color: white;
   border-bottom: 1px solid lightgrey;
-
+}
+#user-event-name, #user-event-creator {
+  font-size: 24px;
+  font-weight: bold;
 }
 
-#user-event-name, #user-event-creator, #event-attendees {
+#user-event-creator {
+  padding-top: 15px;
+}
+
+#user-event-name, #user-event-creator, #user-event-creator-name, #event-attendees {
   color: white;
+}
+
+#get-tickets {
+  margin-top: 0px;
+  /* margin: 50px; */
+  margin-left: 150px;
+  margin-right: 150px;
+  background-color: rgb(52, 139, 238);
+  /* background-color: rgb(126, 126, 35); */
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid white;
+  font-weight: bold;
 }

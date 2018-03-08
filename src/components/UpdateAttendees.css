@@ -5,6 +5,10 @@
   /* transition-timing-function: ease; */
 }
 
+#attendee-label {
+  font-size: 24px;
+}
+
 .attendee-edit-ul {
   padding: 0;
 }

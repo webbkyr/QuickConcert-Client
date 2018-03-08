@@ -19,9 +19,16 @@ export class UserEventDetails extends Component {
 render() {
   let eventName = '';
   let attendeeList = '';
+  let concertDate = '';
+  let concertTime = '';
+  let concertURL = '';
 
   if (this.props.eventDetails) {
+    console.log('EVENT DETAILS PAGE', this.props.eventDetails.eventDetails[0])
     eventName = this.props.eventDetails.eventName;
+    // concertDate = this.props.eventDetails.eventDetails.concertDate;
+    // concertTime = this.props.eventDetails.eventDetails.concertTime;
+    concertURL = this.props.eventDetails.eventDetails[0].concertURL;
     attendeeList = this.props.eventDetails.attendees.map((attendee, index) => {
       return (
         <li id='event-attendees' key={index}>{attendee.attendee}</li>
@@ -34,6 +41,9 @@ render() {
       <div className='event-details-container'>
         <p className='my-event'>My Event</p>
         <p id='user-event-name'>{eventName}</p>
+        <p>{concertDate}</p>
+        <p>{concertTime}</p>
+        <p id='get-tickets'><a href={concertURL} target='_blank' >Get Tickets</a></p>
         <UpdateCreator />
         <UpdateAttendees attendeeList={attendeeList} />
       </div>
