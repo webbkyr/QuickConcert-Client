@@ -14,6 +14,7 @@ export default function AboutPage() {
         link they are able to hit.
       </p>
       <p>In a nutshell, this app is designed to quickly be able to see concerts in the area of your choosing and invite friends to the event you found.</p>
+      <p>Homepage photo credit: veeterzy on <a href='https://unsplash.com/photos/b_xciWkK8Pc'>Unsplash</a></p>
     </section>
   );
 }
