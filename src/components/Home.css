@@ -5,6 +5,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  /* transition: background-image 0.2 ease-in-out; */
   height: 850px;
 
 }

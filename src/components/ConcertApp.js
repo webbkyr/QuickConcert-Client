@@ -30,7 +30,7 @@ export class ConcertApp extends Component {
           <Switch>
             <Route exact path='/' component={PageTransition(Home)}/>
             <Route exact path='/about' component={PageTransition(AboutPage)} />
-            <Route exact path='/search' component={UserLocation} />
+            <Route exact path='/search' component={PageTransition(UserLocation)} />
             <Route exact path='/concerts' component={PageTransition(ConcertDetails)}/>          
             <Route exact path='/event/:eventId' component={UserEventDetails} />
           </Switch>

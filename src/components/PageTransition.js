@@ -8,7 +8,7 @@ const PageTransition = Page => {
         transitionAppear={true}
         transitionAppearTimeout={600}
         transitionEnterTimeout={600}
-        transitionLeaveTimeout={0}
+        transitionLeaveTimeout={200}
         transitionName={props.match.path ? 'SlideIn' : 'SlideOut' }
       >
         <Page {...props} />
