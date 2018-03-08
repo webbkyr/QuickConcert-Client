@@ -28,7 +28,7 @@ render() {
   if (this.props.eventDetails) {
     console.log('EVENT DETAILS PAGE', this.props.eventDetails.eventDetails[0])
     eventName = this.props.eventDetails.eventName;
-    concertDate = this.props.eventDetails.eventDetails[0].concertDate;
+    concertDate = Moment(this.props.eventDetails.eventDetails[0].concertDate).format('MMM Do YYYY')
     concertTime = Moment(this.props.eventDetails.eventDetails[0].concertTime, 'HH:mm').format('h:mm a');
     attendeeList = this.props.eventDetails.attendees.map((attendee, index) => {
       return (

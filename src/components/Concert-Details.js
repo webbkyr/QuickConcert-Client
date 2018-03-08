@@ -23,12 +23,13 @@ export function ConcertDetails(props) {
   const list = props.concerts.map(concert => {
     const concertGenre = concert.classifications[0].genre.name;
     const concertTime = Moment(concert.dates.start.localTime, 'HH:mm').format('h:mm a')
+    const concertDate = Moment(concert.dates.start.localDate).format('MMM Do YYYY')
     
     return (
       <li className='tkmConcertList' key={concert.id}>
         <div id='concert-name'>{concert.name}</div>
         <div id='concert-genre'>{concertGenre ? concertGenre : null}</div>
-        <div id='concert-date'>{concert.dates.start.localDate}</div>
+        <div id='concert-date'>{concertDate}</div>
         <div id='concert-time'>{concertTime}</div>
         <div id='buy-tickets-container'>
           <a target='_blank' href={concert.url}>
