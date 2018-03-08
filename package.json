@@ -6,6 +6,7 @@
     "moment": "^2.20.1",
     "mongoose": "^5.0.0-rc1",
     "react": "^16.2.0",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.2.0",
     "react-fontawesome": "^1.6.1",
     "react-modal": "^3.1.10",
