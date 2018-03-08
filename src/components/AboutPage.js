@@ -4,7 +4,7 @@ import './AboutPage.css';
 export default function AboutPage() {
   return (
     <section id="about" tabIndex="-1">
-      <h2>What is this?</h2>
+      <h2>About the App</h2>
       <p>This is a social event platform.</p>
       <p>
         This application is geared to quickly find concerts in a specified area.

@@ -4,6 +4,8 @@ import { withRouter } from 'react-router-dom';
 import { fetchEventDetails } from '../actions/event-details';
 import UpdateCreator from './UpdateCreator';
 import UpdateAttendees from './UpdateAttendees';
+import FontAwesome from 'react-fontawesome';
+import Moment from 'moment';
 import './usereventdetails.css';
 
 export class UserEventDetails extends Component {
@@ -26,12 +28,12 @@ render() {
   if (this.props.eventDetails) {
     console.log('EVENT DETAILS PAGE', this.props.eventDetails.eventDetails[0])
     eventName = this.props.eventDetails.eventName;
-    // concertDate = this.props.eventDetails.eventDetails.concertDate;
-    // concertTime = this.props.eventDetails.eventDetails.concertTime;
-    concertURL = this.props.eventDetails.eventDetails[0].concertURL;
+    concertDate = this.props.eventDetails.eventDetails[0].concertDate;
+    concertTime = Moment(this.props.eventDetails.eventDetails[0].concertTime, 'HH:mm').format('h:mm a');
     attendeeList = this.props.eventDetails.attendees.map((attendee, index) => {
       return (
-        <li id='event-attendees' key={index}>{attendee.attendee}</li>
+        <li id='event-attendees' key={index}>{attendee.attendee}     <FontAwesome name='fas fa-ban'/>
+        </li>
         )
       });
   } else {
@@ -41,8 +43,8 @@ render() {
       <div className='event-details-container'>
         <p className='my-event'>My Event</p>
         <p id='user-event-name'>{eventName}</p>
-        <p>{concertDate}</p>
-        <p>{concertTime}</p>
+        <p id='user-event-date'>{concertDate}</p>
+        <p id='user-event-time'>{concertTime}</p>
         <p id='get-tickets'><a href={concertURL} target='_blank' >Get Tickets</a></p>
         <UpdateCreator />
         <UpdateAttendees attendeeList={attendeeList} />

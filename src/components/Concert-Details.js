@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom'
 import ShareEvent from './shareevent';
 import Button from './Button';
 import HandleNoConcerts from './NoConcerts';
+import Moment from 'moment';
 import './Concert-Details.css';
 
 export function ConcertDetails(props) {
@@ -21,13 +22,14 @@ export function ConcertDetails(props) {
 
   const list = props.concerts.map(concert => {
     const concertGenre = concert.classifications[0].genre.name;
+    const concertTime = Moment(concert.dates.start.localTime, 'HH:mm').format('h:mm a')
     
     return (
       <li className='tkmConcertList' key={concert.id}>
         <div id='concert-name'>{concert.name}</div>
         <div id='concert-genre'>{concertGenre ? concertGenre : null}</div>
         <div id='concert-date'>{concert.dates.start.localDate}</div>
-        <div id='concert-time'>{concert.dates.start.localTime}</div>
+        <div id='concert-time'>{concertTime}</div>
         <div id='buy-tickets-container'>
           <a target='_blank' href={concert.url}>
             <Button id='buy-tickets-button' buttonText='Buy Tickets'/>

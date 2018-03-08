@@ -7,8 +7,9 @@
 .attendees-container {
   text-align: center;
   color: white;
-  padding: 0;
-  /* margin: 0 auto; */
+  width: 100px;
+  /* padding: 0; */
+  margin: 0 auto;
 }
 
 .my-event {
@@ -24,11 +25,21 @@
   font-weight: bold;
 }
 
+.fa-ban {
+  margin-left: 5px;
+  color: red;
+}
+
 #user-event-creator {
   padding-top: 15px;
 }
 
-#user-event-name, #user-event-creator, #user-event-creator-name, #event-attendees {
+#user-event-name, 
+#user-event-creator, 
+#user-event-creator-name, 
+#user-event-date,
+#user-event-time,
+#event-attendees {
   color: white;
 }
 
@@ -44,3 +55,4 @@
   border: 1px solid white;
   font-weight: bold;
 }
+

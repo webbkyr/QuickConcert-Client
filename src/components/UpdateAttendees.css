@@ -5,6 +5,11 @@
   /* transition-timing-function: ease; */
 }
 
+.attendees-container {
+  width: 100px;
+  margin: 0 auto;
+}
+
 #attendee-label {
   font-size: 24px;
 }
@@ -12,12 +17,12 @@
 .attendee-edit-ul {
   padding: 0;
 }
-
-.attendee-edit-ol > li{
- /* list-style-type: none; */
+/* 
+.attendee-edit-ol {
+ display: list-item;
  list-style-type: decimal;
  color: white;
-}
+} */
 
 #input-add-attendee {
   padding: 5px;
