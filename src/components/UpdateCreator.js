@@ -60,7 +60,7 @@ render() {
         Event Organizer
         <span> <a onClick={() => this.toggle()} ><FontAwesome name='fas fa-edit' /></a></span>
         <p 
-          id='user-event-creator-name'>{this.state.updatedCreator ? this.state.updatedCreator : this.props.creator} 
+          id='user-event-creator-name'><FontAwesome name='far fa-star' /> - {this.state.updatedCreator ? this.state.updatedCreator : this.props.creator} 
         </p>
       </section>
     )
