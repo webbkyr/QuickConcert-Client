@@ -9,7 +9,7 @@ export const fetchConcertRequest = () => ({
 })
 
 export const fetchConcertSuccess = (data, history) => {
-    history.push('/search/concerts')
+    history.push('/concerts')
     return {
         type: FETCH_CONCERT_SUCCESS,
         data
