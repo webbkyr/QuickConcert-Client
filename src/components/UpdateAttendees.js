@@ -45,7 +45,11 @@ import { addAttendee, fetchEventDetails } from '../actions';
         {text}
         {attendeeView}
           <input key='input' id='input-add-attendee' type='text' placeholder='Name' ref='attendee' />
-          <Button key='button1' id='add-attendee-action' buttonText='Add' onClick={() => this.handleAddAttendees(this.refs.attendee.value)} />
+          <Button key='button1' id='add-attendee-action' buttonText='Add' onClick={() => {
+            this.toggle();
+            return this.handleAddAttendees(this.refs.attendee.value)
+          }}
+          />
           <Button key='button2' id='cancel-add-attendee' buttonText='Cancel' onClick={() => this.toggle()}/>
       </div>
       )
