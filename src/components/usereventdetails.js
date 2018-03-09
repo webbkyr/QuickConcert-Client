@@ -9,7 +9,7 @@ import Moment from 'moment';
 import './usereventdetails.css';
 
 export class UserEventDetails extends Component {
-  componentDidMount() {
+  componentWillMount() {
     if (this.props.eventId) {
     this.props.dispatch(fetchEventDetails(this.props.eventId))
     } 

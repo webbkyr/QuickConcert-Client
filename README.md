@@ -36,7 +36,9 @@ Server supports the following:
 
 TODO: 
 
-* Update and delete attendees of those shareable events
+* ~~Update attendees of shareable events~~
+* [Fix refreshing issue with event urls](https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writting-manually)
+* Functionality to delete attendees
 
 ## client side folder structure
 

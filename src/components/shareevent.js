@@ -25,7 +25,6 @@ export class ShareEvent extends Component {
   }
 
   handleSelectedConcert() {
-    console.log(this.props.selectedConcert)
     if (this.props.selectedConcert === null) {
       return
     } else {
