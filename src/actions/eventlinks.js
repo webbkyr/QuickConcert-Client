@@ -36,7 +36,6 @@ export const fetchSharedLink = concertInfo => dispatch => {
           }
           return res.json();
       }).then(event => {
-        //   console.log(event)
           dispatch(fetchLinkSuccess(event));
       }).catch(err => {
           dispatch(fetchLinkError(err))

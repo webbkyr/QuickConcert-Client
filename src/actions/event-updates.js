@@ -31,7 +31,6 @@ export const sendCreatorUpdate = creatorInfo => dispatch => {
           }
           return res.json();
       }).then(creator => {
-          console.log('Creator sent from server', creator)
           dispatch(creatorUpdateSuccess(creator));
       }).catch(err => {
           dispatch(creatorUpdateError(err))

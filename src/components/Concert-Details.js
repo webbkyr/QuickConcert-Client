@@ -10,7 +10,6 @@ import Moment from 'moment';
 import './Concert-Details.css';
 
 export function ConcertDetails(props) {
-  console.log('PROPS DOT MATCH', props.match)
 
   if (props.concerts.length < 1) {
     return <HandleNoConcerts />
