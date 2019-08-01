@@ -45,7 +45,7 @@ render() {
         <p id='user-event-name'>{eventName}</p>
         <p id='user-event-date'>{concertDate}</p>
         <p id='user-event-time'>{concertTime}</p>
-        <p id='get-tickets'><a href={concertURL} target='_blank' >Get Tickets</a></p>
+        <p id='get-tickets'><a href={concertURL}  rel="noopener noreferrer" target='_blank' >Get Tickets</a></p>
         <UpdateCreator />
         <UpdateAttendees attendeeList={attendeeList} />
       </div>

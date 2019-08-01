@@ -32,7 +32,7 @@ export function ConcertDetails(props) {
         <div id='concert-date'>{concertDate}</div>
         <div id='concert-time'>{concertTime}</div>
         <div id='buy-tickets-container'>
-          <a target='_blank' href={concert.url}>
+          <a target='_blank'  rel="noopener noreferrer" href={concert.url}>
             <Button id='buy-tickets-button' buttonText='Buy Tickets'/>
           </a>
         </div>
